@@ -33,8 +33,8 @@ class home
             <a href="#">Contact</a>
         </div>
 
-        <div id="main">
-            <button class="openbtn" onclick="openNav()">☰</button>
+        <div id="main" onclick="openNav()">
+            <button class="openbtn">☰</button>
         </div>
         <div class="title">
             <span class="BDE">BDE </span><span>Cesi</span>
