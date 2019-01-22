@@ -14,21 +14,21 @@ class UserModel {
         $this->pdo = singleton::getInstance();
     }
 
-    public function Inscription(){
-        $username = $_POST['pseudo'];
-        $motDePasse = $_POST['motDePasse'];
+    public function Inscription($username, $password, $firstname, $lastname, $promotion, $mail){
 
-        $requete = $this->pdo->prepare("INSERT INTO users (pseudo, motDePasse) VALUES (:pseudo, :motDePasse)");
+        $requete = $this->pdo->prepare("INSERT INTO users SET username = :username, password = :password, first_name = :firstname, last_name = :lastname, promotion =  :promotion, mail = :mail");
 
-        $requete->bindValue(':pseudo',$username, PDO::PARAM_STR);
-        $requete->bindValue(':motDePasse',$motDePasse, PDO::PARAM_STR);
-
-        $requete->execute();
+        $requete->execute([
+            "username" => $username,
+            "password" => $password,
+            "firstname" => $firstname,
+            "lastname" => $lastname,
+            "promotion" => $promotion,
+            "mail" =>$mail
+        ]);
     }
 
-    public function Connexion(){
-        $username = $_POST['pseudo'];
-        $motDePasse = $_POST['motDePasse'];
+ /*   public function Connexion(){
 
 
         if(empty($username) || empty($motDePasse)) {
@@ -47,7 +47,7 @@ class UserModel {
                 echo "Error, wrong password/username";
             }
         }
-    }
+    }*/
 }
 
 
