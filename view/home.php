@@ -25,12 +25,58 @@ class home
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="stylesheet" href="../public/css/style.css">
+
     <?php include "header.php"; ?>
 
 </head>
 <body>
 
-<br><br> LE FOOTER LE FOOTER LE FOOTER LE FOOTER LE FOOTER LE FOOTER LE FOOTER LE FOOTER LE FOOTER LE FOOTER LE FOOTER LE FOOTER LE FOOTER LE FOOTER LE FOOTER LE FOOTER LE FOOTER<br><br><br><br>
+<br><br><br>
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<hr>
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<hr>
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<hr>
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
 
     <?php include "footer.php"; ?>
 </body>

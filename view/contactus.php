@@ -27,5 +27,7 @@ class contactus
 </head>
 <body>
 
+
+    <?php include "footer.php"; ?>
 </body>
 </html>

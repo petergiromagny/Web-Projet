@@ -28,6 +28,76 @@ class footer
 </head>
 <body>
 
+    <footer>
+        <!-- Footer Links -->
+        <div class="container">
+            <!-- Grid row-->
+            <div class="row text-center d-flex justify-content-center pt-3 mb-3">
+                <!-- Grid column -->
+                <div class="col-md-2 mb-3">
+                    <h6 class="text-uppercase font-weight-bold">
+                        <a href="home.php" class="link">Accueil</a>
+                    </h6>
+                </div>
+                <!-- Grid column -->
+                <!-- Grid column -->
+                <div class="col-md-2 mb-3">
+                    <h6 class="text-uppercase font-weight-bold">
+                        <a href="events.php" class="link">Evénements</a>
+                    </h6>
+                </div>
+                <!-- Grid column -->
+                <!-- Grid column -->
+                <div class="col-md-2 mb-3">
+                    <h6 class="text-uppercase font-weight-bold">
+                        <a href="idea.php" class="link">Idées</a>
+                    </h6>
+                </div>
+                <!-- Grid column -->
+                <!-- Grid column -->
+                <div class="col-md-2 mb-3">
+                    <h6 class="text-uppercase font-weight-bold">
+                        <a href="contactus.php" class="link">Contactez nous</a>
+                    </h6>
+                </div>
+                <!-- Grid column -->
+            </div>
+            <!-- Grid row-->
+        </div>
+        <!-- Footer Links -->
+        <!-- Grid row-->
+        <hr>
+        <!-- Grid row -->
+        <div class="row d-flex">
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-4">
+                <!--Copyright-->
+                <p class="copyright">© 2018 Copyright</p>
+            </div>
+            <!-- Grid column -->
+            <!-- Grid column -->
+            <div class="col-md-5 col-lg-6 ml-lg-0">
+
+                <!-- Social buttons -->
+                <div class="text-center text-md-right">
+                    <ul class="list-unstyled list-inline">
+                        <li class="list-inline-item">
+                            <a href="https://www.facebook.com/bdecesiaix/" class="socialbtn" target=_blank>
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://discord.gg/WCJtbnY" class="socialbtn" target=_blank>
+                                <i class="fab fa-discord"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+    </footer>
 
 
 </body>

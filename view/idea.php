@@ -28,5 +28,6 @@ class idea
 <body>
 
 
+    <?php include "footer.php"; ?>
 </body>
 </html>

@@ -28,5 +28,6 @@ class events
 <body>
 
 
+    <?php include "footer.php"; ?>
 </body>
 </html>
