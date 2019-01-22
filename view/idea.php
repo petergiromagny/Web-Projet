@@ -27,6 +27,37 @@ class idea
 </head>
 <body>
 
+<br><br><br>
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<hr>
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<hr>
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
 
     <?php include "footer.php"; ?>
 </body>
