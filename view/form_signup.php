@@ -16,7 +16,7 @@ class form_signup
 <!DOCTYPE html>
 <html lang="ENG">
 <head>
-    <title>signup</title>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -26,7 +26,7 @@ class form_signup
 <body>
 
     <!--SIGN UP-->
-    <div id="signup" class="modal-sign-up">
+    <div id="signup" class="modal">
         <form class="box-content-sign-up animate" id="form-signup" action="action_page.php">
             <div class="imgcontainer">
                 <span onclick="document.getElementById('signup').style.display='none'" class="close" title="Close Modal">&times;</span>
@@ -61,18 +61,19 @@ class form_signup
                 <label for="psw2"><b>Confirmez votre mot de passe</b></label>
                 <input type="password" placeholder="Entrez votre mot de passe" name="psw2" required>
 
-                <button class="btn-sign-up" type="submit">S'inscrire</button>
+                <button type="button" onclick="document.getElementById('signup').style.display='none'" class="cancelbtn-signup">Quitter</button>
+                <button class="signupbtn-signup" type="submit">S'inscrire</button>
             </div>
 
-            <div class="container" style="background-color:#f1f1f1">
-                <button type="button" onclick="document.getElementById('signup').style.display='none'" class="cancelbtn">Quitter</button>
+            <div class="container" style="background-color:#fbfbff">
+
             </div>
         </form>
         <div class="overlay"></div>
     </div>
 
 
-    <!--SIGN UP-->
+    <!--SIGN UP JS-->
     <script>
         // Get the modal
         var modal = document.getElementById('signup');

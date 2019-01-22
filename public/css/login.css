@@ -54,7 +54,7 @@ span.psw {
     /*padding-top: 1px;*/
 }
 
-.modal-login{
+.modal{
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -80,7 +80,7 @@ span.psw {
 .btn-login {
     border: none;
     cursor: pointer;
-    width: 26%;
+    width: 27%;
     padding: 5px 13px 5px 13px;
     margin: 0 0 5px 0;
     background-color: #f4ab25;
@@ -148,13 +148,6 @@ span.psw {
     padding: 5px 18px;
     margin: -10px 0;
     background-color: #f44336;
-}
-
-/* Change styles for cancel button and signup button on extra small screens */
-@media screen and (max-width: 300px) {
-    .cancelbtn, .signupbtn {
-        width: 100%;
-    }
 }
 
 @-webkit-keyframes animatezoom {

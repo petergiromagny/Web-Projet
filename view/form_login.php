@@ -16,7 +16,7 @@ class form_login
 <!DOCTYPE html>
 <html lang="ENG">
 <head>
-    <title>signup</title>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -25,7 +25,7 @@ class form_login
 </head>
 <body>
     <!--LOGIN CONNEXION-->
-    <div id="login" class="modal-login">
+    <div id="login" class="modal">
         <form class="box-content-login animate" id="form-login" action="action_page.php">
             <div class="imgcontainer">
                 <span onclick="document.getElementById('login').style.display='none'" class="close" title="Close Modal">&times;</span>
@@ -45,11 +45,11 @@ class form_login
             </div>
 
             <div class="container" style="background-color:#f1f1f1">
-                <button type="button" class="cancelbtn-login">Cancel</button>
-                <span class="psw">Forgot <a href="#">password?</a></span>
+                <button type="button" onclick="document.getElementById('login').style.display='none'" class="cancelbtn-login">Quitter</button>
+                <span class="psw"><a href="#">Forgot password?</a></span>
             </div>
         </form>
-        <div class="overlay"></div>
+        <!--<div class="overlay"></div>-->
     </div>
 
 
