@@ -3,13 +3,13 @@
  * Created by PhpStorm.
  * User: peter
  * Date: 22/01/2019
- * Time: 13:11
+ * Time: 13:10
  */
 
 include "form_signup.php";
 include "form_login.php";
 
-class events
+class contactus
 {
 
 }
@@ -18,7 +18,7 @@ class events
 <!DOCTYPE html>
 <html lang="ENG">
 <head>
-    <title>Evénements</title>
+    <title>Contactez nous</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -26,7 +26,6 @@ class events
 
 </head>
 <body>
-
 
 </body>
 </html>

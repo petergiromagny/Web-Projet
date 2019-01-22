@@ -6,6 +6,8 @@
  * Time: 10:32
  */
 
+session_start();
+
 class form_signup
 {
 

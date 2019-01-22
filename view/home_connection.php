@@ -6,6 +6,8 @@
  * Time: 13:38
  */
 
+session_start();
+
 class home_connection
 {
 
@@ -53,7 +55,7 @@ class home_connection
                 <a href="home.php"><i class="fa fa-home"></i> Home</a>
                 <a href="events.php"><i class="far fa-calendar-alt"></i> Evénements</a>
                 <a href="idea.php"><i class="far fa-lightbulb"></i> Idées</a>
-                <a href="contact_us.php"><i class="far fa-question-circle"></i> Contactez-nous</a>
+                <a href="contactus.php"><i class="far fa-question-circle"></i> Contactez-nous</a>
                 <a href="https://www.facebook.com/bdecesiaix/" target=_blank><i class="fab fa-facebook-f"></i> Facebook</a>
                 <a href="https://discord.gg/WCJtbnY" target=_blank><i class="fab fa-discord"></i> Discord</a>
         </ul>

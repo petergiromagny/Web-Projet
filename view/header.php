@@ -3,22 +3,18 @@
  * Created by PhpStorm.
  * User: peter
  * Date: 22/01/2019
- * Time: 13:10
+ * Time: 16:23
  */
 
-include "form_signup.php";
-include "form_login.php";
-
-class contactus
+class header
 {
 
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="ENG">
 <head>
-    <title>Contactez nous</title>
+    <title></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -38,7 +34,6 @@ class contactus
     <!-- Font Awesome JS -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
-
 </head>
 <body>
 
@@ -55,7 +50,7 @@ class contactus
                     <a href="home.php"><i class="fa fa-home"></i> Home</a>
                     <a href="events.php"><i class="far fa-calendar-alt"></i> Evénements</a>
                     <a href="idea.php"><i class="far fa-lightbulb"></i> Idées</a>
-                    <a href="contact_us.php"><i class="far fa-question-circle"></i> Contactez-nous</a>
+                    <a href="contactus.php"><i class="far fa-question-circle"></i> Contactez-nous</a>
                     <a href="https://www.facebook.com/bdecesiaix/" target=_blank><i class="fab fa-facebook-f"></i> Facebook</a>
                     <a href="https://discord.gg/WCJtbnY" target=_blank><i class="fab fa-discord"></i> Discord</a>
             </ul>
@@ -76,17 +71,22 @@ class contactus
                 </div>
             </nav>
         </div>
-        <div class="overlay"></div>
+
     </div>
 
+
+
+    <div class="overlay"></div>
+
     <!-- jQuery CDN - Slim version (=without AJAX) -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Popper.JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <!-- Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
     <!-- jQuery Custom Scroller CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
 
     <!--SIDEBAR-->
     <script type="text/javascript">
@@ -104,10 +104,10 @@ class contactus
                 $('#sidebar').addClass('active');
                 $('.overlay').addClass('active');
                 $('.collapse.in').toggleClass('in');
-                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+                $('a[aria-expanded=true]').attr('aria-expandsed', 'false');
             });
         });
     </script>
-
+    <script type="text/javascript" src="../controller/Ajax.js"></script>
 </body>
 </html>
