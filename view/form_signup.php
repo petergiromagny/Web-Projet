@@ -62,11 +62,13 @@ class form_signup
                 <label for="psw2"><b>Confirmez votre mot de passe</b></label>
                 <input type="password" placeholder="Comfirmez votre mot de passe" name="psw2" id="psw2" required>
 
-                <button class="btn-sign-up" name="button-signup" type="submit">S'inscrire</button>
+                <button type="button" onclick="document.getElementById('signup').style.display='none'" class="cancelbtn-signup">Quitter</button>
+                <button class="signupbtn-signup" name="button-signup" type="submit">S'inscrire</button>
             </div>
 
             <div class="container" style="background-color:#f1f1f1">
-                <button type="button" onclick="document.getElementById('signup').style.display='none'" class="cancelbtn">Quitter</button>
+
+
             </div>
         </form>
         <div class="overlay"></div>

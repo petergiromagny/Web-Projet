@@ -6,6 +6,10 @@
  * Time: 16:23
  */
 
+session_start();
+
+
+
 class header
 {
 
@@ -63,6 +67,7 @@ class header
                 <div class="container-fluid">
                     <button type="button" id="sidebarCollapse" class="btn-nav"><i class="fas fa-bars"></i></button>
                     <div>
+                        <?php if (isset($_POST['signup-for'])) ?>
                         <button type="button" onclick="document.getElementById('signup').style.display='block'" class="btn-nav btn-sign-up" id="" style="width: auto;"><span class="glyphicon glyphicon-user"></span><i class="fas fa-user-plus"></i> Inscription</button>
                         <button type="button" onclick="document.getElementById('login').style.display='block'" class="btn-nav btn-sign-in" id="" style="width: auto;"><span class="glyphicon glyphicon-log-in"></span><i class="fas fa-sign-in-alt"></i> Connexion</button>
                     </div>
@@ -73,6 +78,7 @@ class header
             </nav>
         </div>
     </div>
+
 
 
     <div class="overlay"></div>

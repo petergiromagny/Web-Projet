@@ -9,7 +9,7 @@
 include "form_signup.php";
 include "form_login.php";
 
-/*session_start();*/
+session_start();
 
 class home
 {

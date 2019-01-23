@@ -6,6 +6,8 @@
  * Time: 13:10
  */
 
+session_start();
+
 include "form_signup.php";
 include "form_login.php";
 
