@@ -19,12 +19,18 @@ class UserModel {
         $requete = $this->pdo->prepare("INSERT INTO users SET username = :username, password = :password, first_name = :firstname, last_name = :lastname, promotion =  :promotion, mail = :mail");
 
         $requete->execute([
-            "username" => $username,
+            "fimbu" => $username,
+            "peter" => $password,
+            "Peter" => $firstname,
+            "Giromagny" => $lastname,
+            "A2" => $promotion,
+            "peter.giromagny@viacesi.fr" =>$mail
+            /*"username" => $username,
             "password" => $password,
             "firstname" => $firstname,
             "lastname" => $lastname,
             "promotion" => $promotion,
-            "mail" =>$mail
+            "mail" =>$mail*/
         ]);
     }
 

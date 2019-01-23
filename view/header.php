@@ -6,18 +6,13 @@
  * Time: 16:23
  */
 
-session_start();
-
-
 
 class header
 {
 
 }
 ?>
-<!DOCTYPE html>
-<html lang="ENG">
-<head>
+
     <title></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,8 +33,6 @@ class header
     <!-- Font Awesome JS -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
-</head>
-<body>
 
 
     <div class="wrapper">
@@ -53,6 +46,7 @@ class header
             <ul class="list-unstyled components">
                 <li class="active">
                     <a href="home.php"><i class="fa fa-home"></i> Home</a>
+                    <a href="shop.php"><i class="fas fa-shopping-cart"></i> Boutique</a>
                     <a href="events.php"><i class="far fa-calendar-alt"></i> Evénements</a>
                     <a href="idea.php"><i class="far fa-lightbulb"></i> Idées</a>
                     <a href="contactus.php"><i class="far fa-question-circle"></i> Contactez-nous</a>
@@ -67,7 +61,6 @@ class header
                 <div class="container-fluid">
                     <button type="button" id="sidebarCollapse" class="btn-nav"><i class="fas fa-bars"></i></button>
                     <div>
-                        <?php if (isset($_POST['signup-for'])) ?>
                         <button type="button" onclick="document.getElementById('signup').style.display='block'" class="btn-nav btn-sign-up" id="" style="width: auto;"><span class="glyphicon glyphicon-user"></span><i class="fas fa-user-plus"></i> Inscription</button>
                         <button type="button" onclick="document.getElementById('login').style.display='block'" class="btn-nav btn-sign-in" id="" style="width: auto;"><span class="glyphicon glyphicon-log-in"></span><i class="fas fa-sign-in-alt"></i> Connexion</button>
                     </div>
@@ -114,5 +107,4 @@ class header
         });
     </script>
     <script type="text/javascript" src="../controller/Ajax.js"></script>
-</body>
-</html>
+

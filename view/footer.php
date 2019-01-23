@@ -12,9 +12,6 @@ class footer
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="ENG">
-<head>
     <title></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,8 +22,6 @@ class footer
     <!--CSS bootstrap-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
-</head>
-<body>
 
     <footer>
         <!-- Footer Links -->
@@ -57,6 +52,13 @@ class footer
                 <!-- Grid column -->
                 <div class="col-md-2 mb-3">
                     <h6 class="text-uppercase font-weight-bold">
+                        <a href="shop.php" class="link">Boutique</a>
+                    </h6>
+                </div>
+                <!-- Grid column -->
+                <!-- Grid column -->
+                <div class="col-md-2 mb-3">
+                    <h6 class="text-uppercase font-weight-bold">
                         <a href="contactus.php" class="link">Contactez nous</a>
                     </h6>
                 </div>
@@ -68,37 +70,9 @@ class footer
         <!-- Grid row-->
         <hr>
         <!-- Grid row -->
-        <div class="row d-flex">
-            <!-- Grid column -->
-            <div class="col-md-2 col-lg-4">
+            <div class="copyright">
                 <!--Copyright-->
-                <p class="copyright">© 2018 Copyright</p>
+                <p >© 2018 Copyright</p>
             </div>
-            <!-- Grid column -->
-            <!-- Grid column -->
-            <div class="col-md-5 col-lg-6 ml-lg-0">
-
-                <!-- Social buttons -->
-                <div class="text-center text-md-right">
-                    <ul class="list-unstyled list-inline">
-                        <li class="list-inline-item">
-                            <a href="https://www.facebook.com/bdecesiaix/" class="socialbtn" target=_blank>
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="https://discord.gg/WCJtbnY" class="socialbtn" target=_blank>
-                                <i class="fab fa-discord"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <!-- Grid column -->
-        </div>
         <!-- Grid row -->
     </footer>
-
-
-</body>
-</html>

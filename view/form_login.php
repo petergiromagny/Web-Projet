@@ -6,6 +6,7 @@
  * Time: 10:32
  */
 
+
 class form_login
 {
 
@@ -33,10 +34,17 @@ class form_login
 
             <div class="container">
                 <label for="mail"><b>E-Mail</b></label>
-                <input type="text" placeholder="Entrez votre e-mail" name="mail" required>
+                <input type="text" placeholder="Entrez votre e-mail" name="mail" <!--value="--><?php /*if (isset($mail)) echo $mail; */?>" required="required">
 
                 <label for="psw"><b>Mot de passe</b></label>
-                <input type="password" placeholder="Entrez votre mot de passe" name="psw" required>
+
+                <?php
+/*                if(isset($error_password)){
+                    echo $error_password."<br/>";
+                }
+                */?>
+
+                <input type="password" placeholder="Entrez votre mot de passe" name="psw" <!--value="--><?php /*if (isset($password)) echo $password; */?>" required="required">
 
                 <button class="btn-login" type="submit">Login</button>
                 <label style="float: right">

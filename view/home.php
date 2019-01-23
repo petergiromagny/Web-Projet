@@ -9,75 +9,40 @@
 include "form_signup.php";
 include "form_login.php";
 
-session_start();
-
 class home
 {
 
-
 }
+
 ?>
 
 <!DOCTYPE html>
 <html lang="ENG">
 <head>
-    <title>Home</title>
+    <title>Accueil</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="../public/css/style.css">
+    <!--<link rel="stylesheet" href="../public/css/style.css">-->
+
+    <!--Our font family-->
+    <!--<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">-->
 
     <?php include "header.php"; ?>
 
 </head>
 <body>
 
-<br><br><br>
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<hr>
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<hr>
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<hr>
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
 
-    <?php include "footer.php"; ?>
+<div>
+    <p>HOME</p>
+    <p>HOME</p>
+    <p>HOME</p>
+    <p>HOME</p>
+    <p>HOME</p>
+</div>
+
+
+<?php include "footer.php"; ?>
 </body>
 </html>

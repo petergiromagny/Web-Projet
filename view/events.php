@@ -6,11 +6,6 @@
  * Time: 13:11
  */
 
-session_start();
-
-$_SESSION[''] = 'Peter';
-$_SESSION['password']   = '12345';
-
 include "form_signup.php";
 include "form_login.php";
 
@@ -39,7 +34,7 @@ class events
 <br>LE FOOTER
 <br>LE FOOTER
 <hr>
-<p>Bonjour <?php echo $_SESSION['firstname']?> ton mot de passe est : <?php echo $_SESSION['password']?></p>
+
 <hr>
 <br>LE FOOTER
 <br>LE FOOTER
