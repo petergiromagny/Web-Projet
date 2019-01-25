@@ -55,7 +55,7 @@ input[type=text], input[type=password] {
 /* Modal Content/Box */
 .box-content-sign-up {
     background-color: #fefefe;
-    margin: 2% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    margin: 0 auto 10% auto; /* 5% from the top, 15% from the bottom and centered */
     border: 1px solid #888;
     width: 50%; /* Could be more or less, depending on screen size */
 }
@@ -84,24 +84,25 @@ input[type=text], input[type=password] {
 
 
 /* Extra styles for the cancel button */
-.cancelbtn {
-    padding: 14px 20px;
-    margin-left: 10%;
+.cancelbtn-signup {
+    padding: 5px 13px;
     border: none;
     cursor: pointer;
-    width: 40%;
+    width: 50%;
     float: left;
     background-color: #f44336;
 }
 
-.cancelbtn-login{
+.signupbtn-signup {
+    padding: 5px 13px;
+    width: 50%;
+    float: left;
     border: none;
     cursor: pointer;
-    width: auto;
-    padding: 5px 18px;
-    margin: -10px 0;
-    background-color: #f44336;
+    background-color: #f4ab25;
+    color: #000;
 }
+
 
 @-webkit-keyframes animatezoom {
     from {-webkit-transform: scale(0)}

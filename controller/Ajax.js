@@ -24,45 +24,102 @@
 }*/
 
 //document.querySelector('form').addEventListener('submit', inscript);
+(function () {
+    "use strict";
 
-var request;
+    var request;
 
-$("#signup-fo").submit(function (event) {
-    event.preventDefault();
+    $("#signup-fo").submit(function (event) {
+        event.preventDefault();
 
-    if(request){
-        request.abort();
-    }
+        if(request){
+            request.abort();
+        }
 
-    var $form = $(this);
+        var $form = $(this);
 
-    var $inputs = $form.find("input, select, button, textarea");
+        var $inputs = $form.find("input, select, button, textarea");
 
-    var serializedData = $form.serialize();
+        var serializedData = $form.serialize();
 
-    $inputs.prop("disabled", true);
+        $inputs.prop("disabled", true);
 
-    request = $.ajax({
-        url: "../controller/UserController.php",
-        type: "post",
-        data: serializedData
+        request = $.ajax({
+            url: "../controller/UserController.php?status=inscription",
+            type: "post",
+            data: serializedData
+        });
+
+        request.done(function (response, textStatus, jqXHR){
+            // Log a message to the console
+            console.log("Ok!");
+        });
+
+        request.fail(function (jqXHR, textStatus, errorThrown){
+            // Log the error to the console
+            console.error(
+                "The following error occurred: "+
+                textStatus, errorThrown
+            );
+        });
+
+        request.always(function () {
+            // Reenable the inputs
+            $inputs.prop("disabled", false);
+        });
     });
+}) ();
 
-    request.done(function (response, textStatus, jqXHR){
-        // Log a message to the console
-        console.log("Hooray, it worked!");
-    });
 
-    request.fail(function (jqXHR, textStatus, errorThrown){
-        // Log the error to the console
-        console.error(
-            "The following error occurred: "+
-            textStatus, errorThrown
-        );
-    });
 
-    request.always(function () {
-        // Reenable the inputs
-        $inputs.prop("disabled", false);
+(function () {
+    "use strict";
+
+    var request_login;
+
+    $("#form-login").submit(function (event) {
+        event.preventDefault();
+
+        if(request_login){
+            request.abort();
+        }
+
+        var $form = $(this);
+
+        var $inputs = $form.find("input, select, button, textarea");
+
+        var serializedData = $form.serialize();
+
+        $inputs.prop("disabled", true);
+
+        request_login = $.ajax({
+            url: "../controller/UserController.php?status=connexion",
+            type: "post",
+            data: serializedData
+        });
+
+        request_login.done(function (data){
+            console.log(data);
+            if(data.success){
+                window.location = data.url_redirect;
+            }else{
+                console.log(data.message);
+            }
+            console.log("Ok!");
+        });
+
+        request_login.fail(function (jqXHR, textStatus, errorThrown){
+            // Log the error to the console
+            console.error(
+                "The following error occurred: "+
+                textStatus, errorThrown
+            );
+        });
+
+        request_login.always(function () {
+            // Reenable the inputs
+            $inputs.prop("disabled", false);
+        });
     });
-});
+}) ();
+

@@ -14,7 +14,23 @@ class UserModel {
         $this->pdo = singleton::getInstance();
     }
 
-    public function Inscription($username, $password, $firstname, $lastname, $promotion, $mail){
+    public function inscription($username, $password, $firstname, $lastname, $promotion, $mail){
+
+
+
+        $test = $this->pdo->prepare("SELECT username FROM users WHERE username = :username");
+        $test->execute(array("username" => $username));
+
+        if($test->rowCount() >= 1) {
+           echo "error";
+            }
+        else{
+            $this->register($username, $password, $firstname, $lastname, $promotion, $mail);
+        }
+    }
+
+    private function register($username, $password, $firstname, $lastname, $promotion, $mail){
+
 
         $requete = $this->pdo->prepare("INSERT INTO users SET username = :username, password = :password, first_name = :firstname, last_name = :lastname, promotion =  :promotion, mail = :mail");
 
@@ -28,26 +44,38 @@ class UserModel {
         ]);
     }
 
- /*   public function Connexion(){
+    public function connexion($mail, $password){
 
+        $retour = new stdClass();
+        $retour->success = false;
 
-        if(empty($username) || empty($motDePasse)) {
-            $message = 'Les champs ne sont pas remplis';
+        if(empty($mail) || empty($password)) {
+            $retour->message = 'Les champs ne sont pas remplis';
         } else {
-            $requete = $this->pdo->prepare("SELECT * FROM users WHERE pseudo =? AND  motDePasse =?");
-            $requete->execute(array($username, $motDePasse));
-            $row = $requete->fetch(PDO::FETCH_BOTH);
+            $requete = $this->pdo->prepare("SELECT * FROM users WHERE mail = :mail AND  password = :password");
+            $requete->execute(array("mail" => $mail, "password" => $password));
 
+            $result = $requete->fetch(PDO::FETCH_ASSOC);
+            $username = $result['username'];
+            $usertype = $result['user_type'];
             if($requete->rowCount() > 0){
+                $retour->success = true;
                 session_start();
-                $_SESSION['pseudo'] = $username;
-                $_SESSION['password'] = $motDePasse;
-                header('location:connected.php');
+                $_SESSION['email'] = $mail;
+                $_SESSION['username'] = $username;
+                $_SESSION['usertype'] = $usertype;
+                $retour->url_redirect = '../model/test.php';
             } else {
-                echo "Error, wrong password/username";
+                $retour->message = 'Erreur';
             }
+
         }
-    }*/
+
+        header('Cache-Control: no-cache, must-revalidate');
+        header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
+        header('Content-type: application/json');
+        echo json_encode($retour);
+    }
 }
 
 
