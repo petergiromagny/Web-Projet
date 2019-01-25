@@ -1,35 +1,80 @@
+.container{
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+    margin-top: 40px;
+}
 
-.product-filter {
-    display: block;
-    background-color: #5c5b5b;
-    position: fixed;
-    top: 80px;
+.container ul{
+    padding: 0px;
+    margin: 0px;
+}
+
+
+.container ul li{
+    float:left;
+    list-style: none;
+    width:20%;
+    height:300px;
+    background: red;
+    margin :20px 0px 20px 55px;
+    border:2px solid blue;
+    box-sizing: border-box;
+}
+.container ul li:hover{
+    opacity: 0.8;
+}
+
+.container ul li .bottom{
     width: 100%;
-
-}
-
-.product-filter h1 {
-    flex-grow: 1;
-}
-
-.sort {
-    display: inline-flex;
-    float: right;
-    width: 100%;
-    font-size: 11px;
-    color: white;
-}
-
-.collection-sort {
-    display: inline-flex;
-    flex-direction: column;
-}
-
-.filter{
-
-}
-
-div h1{
+    height:50px;
+    line-height: 50px;
+    background: blue;
+    text-align: center;
+    color:white;
     font-size: 20px;
-    color: #f1f1f1;
+
+}
+
+.middle {
+    transition: .5s ease;
+    opacity: 0;
+    /*position: absolute;
+    top: 50%;
+    left: 50%;*/
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.container:hover .middle {
+    opacity: 1;
+}
+
+.container:hover .image {
+    opacity: 0.3;
+}
+
+.text {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    padding: 16px 32px;
+}
+
+@media screen and (max-width:1250px) {
+    .container ul li {
+        width: 40%;
+        margin-left: 40px;
+
+    }
 }

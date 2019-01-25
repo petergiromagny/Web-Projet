@@ -33,38 +33,25 @@ class shop
 <body>
 
     <?php include "header.php"; ?>
-    <!--<div class="filter">-->
-        <div class="product-filter">
 
-            <h1>Habille toi aux couleurs de notre BDE !!</h1>
+    <div class="container">
+        <ul>
+            <li>
+                <img src="img_avatar.png" alt="Avatar" class="image" style="width:100%">
+                <button href="#" class="middle">
+                    <div class="text">John Doe</div>
+                </button>
+            </li>
+            <li> <div class="bottom">Heading</div> </li>
+            <li> <div class="bottom">Heading</div> </li>
+            <li> <div class="bottom">Heading</div> </li>
+            <li> <div class="bottom">Heading</div> </li>
+            <li> <div class="bottom">Heading</div> </li>
+            <li> <div class="bottom">Heading</div> </li>
+            <li> <div class="bottom">Heading</div> </li>
 
-            <div class="sort">
-
-                <div class="collection-sort">
-                    <label>Filter by:</label>
-                    <select>
-                        <option value="/">All Jackets</option>
-                    </select>
-                </div>
-
-                <div class="collection-sort">
-                    <label>Sort by:</label>
-                    <select>
-                        <option value="/">Featured</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-    <!--</div>-->
-
-
-<div>
-    <p>HOME</p>
-    <p>HOME</p>
-    <p>HOME</p>
-    <p>HOME</p>
-    <p>HOME</p>
-</div>
+        </ul>
+    </div>
 
 
 <?php include "footer.php"; ?>

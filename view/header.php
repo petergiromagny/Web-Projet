@@ -37,7 +37,7 @@ class header
 
     <div class="wrapper">
         <!-- SIDEBAR  -->
-        <nav id="sidebar">
+        <header id="sidebar">
             <div class="sidebar-header">
                 <h3>Menu</h3>
                 <div class="line"></div>
@@ -53,11 +53,11 @@ class header
                     <a href="https://www.facebook.com/bdecesiaix/" target=_blank><i class="fab fa-facebook-f"></i> Facebook</a>
                     <a href="https://discord.gg/WCJtbnY" target=_blank><i class="fab fa-discord"></i> Discord</a>
             </ul>
-        </nav>
+        </header>
 
         <!-- PAGE CONTENT  -->
         <div id="content">
-            <nav class="navbar">
+            <header class="navbar">
                 <div class="container-fluid">
                     <button type="button" id="sidebarCollapse" class="btn-nav"><i class="fas fa-bars"></i></button>
                     <div>
@@ -68,7 +68,7 @@ class header
                 <div class="title">
                     <span class="BDE">BDE </span><span>CESI AIX</span>
                 </div>
-            </nav>
+            </header>
         </div>
     </div>
 
