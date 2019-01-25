@@ -56,7 +56,7 @@ class header
         </header>
 
         <!-- PAGE CONTENT  -->
-        <div id="content">
+        <div>
             <header class="navbar">
                 <div class="container-fluid">
                     <button type="button" id="sidebarCollapse" class="btn-nav"><i class="fas fa-bars"></i></button>

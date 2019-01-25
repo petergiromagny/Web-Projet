@@ -6,4 +6,31 @@ body {
     outline: none !important;
 }
 
+.container {
+    position: relative;
+}
+
+.text-block {
+    position: absolute;
+    opacity: 0.7;
+    bottom: 20px;
+    right: 20px;
+    background-color: black;
+    color: white;
+    padding: 20px 20px;
+}
+
+h4{
+    color: white;
+}
+
+.link{
+    color: #fbfbff;
+    text-decoration: none;
+}
+
+.link:hover{
+    color: #fbfbff;
+    text-decoration: none;
+}
 

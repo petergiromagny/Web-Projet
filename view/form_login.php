@@ -17,7 +17,7 @@ class form_login
 <!DOCTYPE html>
 <html lang="ENG">
 <head>
-
+    <title>login</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -27,12 +27,12 @@ class form_login
 <body>
     <!--LOGIN CONNEXION-->
     <div id="login" class="modal">
-        <form class="box-content-login animate" id="form-login" action="action_page.php">
+        <form class="box-content-login animate" id="form-login" action="">
             <div class="imgcontainer">
                 <span onclick="document.getElementById('login').style.display='none'" class="close" title="Close Modal">&times;</span>
             </div>
 
-            <div class="container">
+            <div class="container-login">
                 <label for="mail"><b>E-Mail</b></label>
                 <input type="text" placeholder="Entrez votre e-mail" name="mail" <!--value="--><?php /*if (isset($mail)) echo $mail; */?>" required="required">
 

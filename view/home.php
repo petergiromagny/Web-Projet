@@ -23,7 +23,7 @@ class home
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!--<link rel="stylesheet" href="../public/css/style.css">-->
+    <link rel="stylesheet" href="../public/css/style.css">
 
     <!--Our font family-->
     <!--<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">-->
@@ -33,14 +33,32 @@ class home
 </head>
 <body>
 
+    <div class="container-img">
+        <img src="../assets/image/airsoft.JPG" alt="Nature" style="width:100%;">
+        <div class="text-block">
+            <h4>Activité Airsoft</h4>
+            <a href="events.php" class="link">Plus d'information sur cette activitée</a>
+        </div>
+    </div>
 
-<div>
-    <p>HOME</p>
-    <p>HOME</p>
-    <p>HOME</p>
-    <p>HOME</p>
-    <p>HOME</p>
-</div>
+
+    <div>
+        <p>HOME</p>
+        <p>HOME</p>
+        <p>HOME</p>
+        <p>HOME</p>
+        <p>HOME</p>
+        <p>HOME</p>
+        <p>HOME</p>
+        <p>HOME</p>
+        <p>HOME</p>
+        <p>HOME</p>
+        <p>HOME</p>
+        <p>HOME</p>
+        <p>HOME</p>
+        <p>HOME</p>
+        <p>HOME</p>
+    </div>
 
 
 <?php include "footer.php"; ?>

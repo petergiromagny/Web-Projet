@@ -34,23 +34,39 @@ class shop
 
     <?php include "header.php"; ?>
 
-    <div class="container">
-        <ul>
-            <li>
-                <img src="img_avatar.png" alt="Avatar" class="image" style="width:100%">
-                <button href="#" class="middle">
-                    <div class="text">John Doe</div>
-                </button>
-            </li>
-            <li> <div class="bottom">Heading</div> </li>
-            <li> <div class="bottom">Heading</div> </li>
-            <li> <div class="bottom">Heading</div> </li>
-            <li> <div class="bottom">Heading</div> </li>
-            <li> <div class="bottom">Heading</div> </li>
-            <li> <div class="bottom">Heading</div> </li>
-            <li> <div class="bottom">Heading</div> </li>
-
-        </ul>
+    <div class="main-container">
+        <div class="left">
+            <img src="../assets/image/sweat.jpg" alt="Avatar" class="image" style="width:100%">
+            <button href="#" class="btn"> Acheter </button>
+        </div>
+        <div class="left">
+            <img src="../assets/image/t-shirt1.png" alt="T-shirt" class="image" style="width:100%">
+            <button type="button" href="#" class="btn"> Acheter </button>
+        </div>
+        <div class="left">
+            <img src="../assets/image/sweat.jpg" alt="Avatar" class="image" style="width:100%">
+            <button type="button" href="#" class="btn"> Acheter </button>
+        </div>
+        <div class="left">
+            <img src="../assets/image/sweat.jpg" alt="Avatar" class="image" style="width:100%">
+            <button type="button" href="#" class="btn"> Acheter </button>
+        </div>
+        <div class="left">
+            <img src="../assets/image/t-shirt1.png" alt="T-shirt" class="image" style="width:100%">
+            <button type="button" href="#" class="btn"> Acheter </button>
+        </div>
+        <div class="left">
+            <img src="../assets/image/sweat.jpg" alt="Avatar" class="image" style="width:100%">
+            <button type="button" href="#" class="btn"> Acheter </button>
+        </div>
+        <div class="left">
+            <img src="../assets/image/t-shirt1.png" alt="T-shirt" class="image" style="width:100%">
+            <button type="button" href="#" class="btn"> Acheter </button>
+        </div>
+        <div class="left">
+            <img src="../assets/image/sweat.jpg" alt="Avatar" class="image" style="width:100%">
+            <button type="button" href="#" class="btn"> Acheter </button>
+        </div>
     </div>
 
 
