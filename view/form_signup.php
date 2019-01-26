@@ -18,7 +18,6 @@ class form_signup
 <!DOCTYPE html>
 <html lang="ENG">
 <head>
-    <title>signup</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -65,13 +64,9 @@ class form_signup
                 <button type="button" onclick="document.getElementById('signup').style.display='none'" class="cancelbtn-signup">Quitter</button>
                 <button class="signupbtn-signup" name="button-signup" type="submit">S'inscrire</button>
             </div>
-
-            <div class="container" style="background-color:#f1f1f1">
-
-
-            </div>
+            <div class="container" style="background-color:#f1f1f1"></div>
         </form>
-        <div class="overlay"></div>
+
     </div>
 
 
@@ -86,21 +81,6 @@ class form_signup
                 modal.style.display = "none";
             }
         }
-    </script>
-    <script>
-        var password = document.getElementById("password")
-            , confirm_password = document.getElementById("psw2");
-
-        function validatePassword(){
-            if(password.value != confirm_password.value) {
-                confirm_password.setCustomValidity("Les mots de passes de correspondent pas");
-            } else {
-                confirm_password.setCustomValidity('');
-            }
-        }
-
-        password.onchange = validatePassword;
-        confirm_password.onkeyup = validatePassword;
     </script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js">
     <script src="../controller/Ajax.js"></script>

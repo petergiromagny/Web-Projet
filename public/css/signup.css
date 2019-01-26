@@ -24,7 +24,7 @@ input[type=text], input[type=password] {
 }
 
 .container {
-    margin-top: 28px;
+    margin-top: 40px;
     padding: 16px;
 }
 
@@ -34,6 +34,11 @@ input[type=text], input[type=password] {
     padding: 2px 20px;
     border: 1px solid #ccc;
     box-sizing: border-box;
+}
+
+span.psw {
+    float: right;
+    /*padding-top: 1px;*/
 }
 
 /* The Modal (background) */
@@ -47,7 +52,6 @@ input[type=text], input[type=password] {
     height: 100%; /* Full height */
     overflow-y: scroll;
     overflow-x: hidden;
-    /*overflow: auto;*/ /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
     padding-top: 60px;
@@ -56,7 +60,7 @@ input[type=text], input[type=password] {
 /* Modal Content/Box */
 .box-content-sign-up {
     background-color: #fefefe;
-    margin: 0 auto 10% auto; /* 5% from the top, 15% from the bottom and centered */
+    margin: 4% auto 10% auto; /* 5% from the top, 15% from the bottom and centered */
     border: 1px solid #888;
     width: 50%; /* Could be more or less, depending on screen size */
 }
@@ -83,6 +87,12 @@ input[type=text], input[type=password] {
     animation: animatezoom 0.6s
 }
 
+/* Clear floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
 
 /* Extra styles for the cancel button */
 .cancelbtn-signup {
@@ -102,21 +112,6 @@ input[type=text], input[type=password] {
     cursor: pointer;
     background-color: #f4ab25;
     color: #000;
-}
-
-.overlay {
-    display: none;
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 998;
-    opacity: 0;
-    transition: all 0.5s ease-in-out;
-}
-.overlay.active {
-    display: block;
-    opacity: 1;
 }
 
 @-webkit-keyframes animatezoom {

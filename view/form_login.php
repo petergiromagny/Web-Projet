@@ -17,7 +17,6 @@ class form_login
 <!DOCTYPE html>
 <html lang="ENG">
 <head>
-    <title>login</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -51,13 +50,11 @@ class form_login
                     <input type="checkbox" checked="checked" name="remember"> Remember me
                 </label>
             </div>
-
             <div class="container" style="background-color:#f1f1f1">
                 <button type="button" onclick="document.getElementById('login').style.display='none'" class="cancelbtn-login">Quitter</button>
                 <span class="psw"><a href="#">Forgot password?</a></span>
             </div>
         </form>
-        <!--<div class="overlay"></div>-->
     </div>
 
 
