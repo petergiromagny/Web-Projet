@@ -24,9 +24,10 @@ class home
 
     <link rel="stylesheet" href="../public/css/style.css">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <?php include_once 'header.php'; ?>
 
-    <?php include "header.php"; ?>
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">-->
+
 
 </head>
 <body>
@@ -41,44 +42,21 @@ class home
     </div>-->
 
     <div class="container-slide">
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
-            </ol>
-
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner">
-                <div class="item active">
-                    <img src="../assets/image/slide1.JPG" alt="Airsoft" style="width:100%;">
-                </div>
-
-                <div class="item">
-                    <img src="../assets/image/slide2.jpg" alt="Calendrier" style="width:100%;">
-                </div>
-
-                <div class="item">
-                    <img src="../assets/image/slide3.png" alt="Evénements" style="width:100%;">
-                </div>
-            </div>
-
-            <!-- Left and right controls -->
-            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-                <span class="sr-only">Precedent</span>
-            </a>
-            <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-                <span class="sr-only">Suivant</span>
-            </a>
+        <!-- Wrapper for slides -->
+        <div class="column">
+            <img src="../assets/image/slide1.JPG" alt="Airsoft" class="img" style="width:100%;">
+            <button class="btn-slide">Button</button>
+        </div>
+        <div class="column">
+                <img src="../assets/image/slide2.jpg" alt="Calendrier" class="img" style="width:100%;">
+        </div>
+        <div class="column">
+                <img src="../assets/image/slide3.png" alt="Evénements" class="img" style="width:100%;">
         </div>
     </div>
 
     <div class="container-shop">
         <h2>Habillez vous aux couleurs de votre BDE</h2>
-        <div>
             <div class="center">
                 <img src="../assets/image/aucune_image.gif" alt="sweat" style="width:100%;" class="image-shop">
             </div>
@@ -86,12 +64,11 @@ class home
                 <img src="../assets/image/aucune_image.gif" alt="tee" style="width:100%;" class="image-shop">
             </div>
             <button href="shop.php" class="btn-shop">Allez à la boutique</button>
-        </div>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>-->
 
-<?php include "footer.php"; ?>
+<?php include_once 'footer.php'; ?>
 </body>
 </html>
