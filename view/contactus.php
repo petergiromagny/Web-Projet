@@ -29,37 +29,31 @@ class contactus
 </head>
 <body>
 
-<br><br><br>
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<hr>
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<hr>
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
+<div class="container">
+    <form action="contactus.php">
+
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="Votre prénom ...">
+
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lastname" placeholder="Votre nom ...">
+
+        <label for="class">Classe</label>
+        <select id="class" name="Classe">
+            <option value="A1">A1</option>
+            <option value="A2">A2</option>
+            <option value="A3">A3</option>
+            <option value="A4">A4</option>
+            <option value="A5">A5</option>
+        </select>
+
+        <label for="subject">Subject</label>
+        <textarea id="subject" name="subject" placeholder="Dites nous en plus ..." style="height:200px"></textarea>
+
+        <input type="Envoyer" value="Envoyer">
+
+    </form>
+</div>
 
 <?php include "footer.php"; ?>
 </body>
