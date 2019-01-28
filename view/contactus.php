@@ -12,43 +12,26 @@ include "form_signup.php";
 include "form_login.php";
 
 ?>
-<?php
-if(isset($_POST['Mailform']))
-{
-    if(!empty($_POST['Mail']) AND !empty($_POST['Message']))
-    {
 
-    }
-    else
-    {
-        $msg="Tout les champs doivent être complétés!";
-    }
-}
-?>
 <!DOCTYPE html>
 <html lang="ENG">
 <head>
     <title>Contactez nous</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <?php include "header.php"; ?>
+    <link rel="stylesheet" href="../public/css/contactus.css">
 
 </head>
     <body>
-        <form method=""POST" action="">
-            <h2> Contactez nous par mail ! </h2>
-
-                        <input type="email" name="Mail" placeholder="Votre mail ..."><br><br />
-                        <textarea type="text" name="Message" placeholder="Votre message..."></textarea><br><br />
-                        <input type="submit" value="Envoyer" name=""Mailform"><br><br />
+        <h2 class="titre"> Contactez nous ! ! !</h2> <br/><br/>
+        <form method="post">
+            <div style="text-align:center;">
+                <input type="email" name="email" placeholder="Votre E-Mail ... "  size="60" required><br/><br/><br/>
+                <textarea style="width:80%;" cols="8" rows="8" name="message" placeholder="Votre message ... " required></textarea><br/><br/><br/><br/>
+                <input type="submit">
+            </div>
         </form>
-    <?php
-        if(isset($msg))
-        {
-            echo($msg);
-        }
-    ?>
     <?php include "footer.php"; ?>
     </body>
 </html>
