@@ -39,8 +39,12 @@ class events
 
     <div id="eventlists" style="padding-top:50px;">
         liste de evenements
-        <div id="listeEvents"></div>
-        <!--IMAGE-->
+        <div id="listeEvents">
+
+        </div>
+        <?php if(isset($_SESSION['usertype']) && $usertype == 1 || $usertype == 3){
+            echo "<button>Ajouter un evenement</button>";
+        } ?>
     </div>
 
 <script>

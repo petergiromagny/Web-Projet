@@ -144,21 +144,30 @@ function afficheList(data,status){
     for (var i in data)
     {
         item = item + '<tr><td>' + data[i].name  + '</td><td>' + data[i].description + "</td></tr><button onclick='studentAdd();'>Sinscrire à l'événement</button>" +
-            "<img src='pic_trulli.jpg' alt='Italian Trulli'>";
+            "<img src="+ data[i].image  +" alt='Airsoft'>";
         if(usertype == 3 || usertype == 2){
-            item = item + '<button>Supprimer cet image</button>';
+            var img = data[i].image;
+            item = item + '<button id="deleteImg" onclick="deletePic(img);">Supprimer cet image</button>';
         }
     }
 
     console.log(usertype);
     item = item + '</table>';
-    if(usertype == 3 || usertype == 2){
+    /*if(usertype == 3 || usertype == 2){
         item = item + '<button>Ajouter un evenement</button>';
-    }
+    }*/
     $('#listeEvents').append(item);
 
 }
 
+function deletePic(image) {
+    $.ajax({
+        type: "POST",
+        url: "../controller/EventController.php?action=addstudent",
+        dataType: 'json',
+        data: {img: image}
+    });
+}
 
 function studentAdd(){
     $.ajax({

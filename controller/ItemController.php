@@ -21,13 +21,11 @@ if($action == "delete"){
 }
 
 function delete(){
-    global $bdd;
-
     $id = $_POST['id'];
-    $bdd->deleteItem($id);
 }
 
 function showItems(){
     global $bdd;
+
     $bdd->showAllItems();
 }

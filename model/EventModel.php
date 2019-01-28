@@ -20,5 +20,11 @@ class EventModel{
         $stmt->bindParam(':username',$username);
         $stmt->execute();
     }
+
+    public function deleteImg($img){
+        $stmt = $this->pdo->prepare("UPDATE evenement SET image = '' WHERE image = :image");
+        $stmt->bindParam(':image',$img);
+        $stmt->execute();
+    }
 }
 
