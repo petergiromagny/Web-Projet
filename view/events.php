@@ -5,9 +5,18 @@
  * Date: 22/01/2019
  * Time: 13:11
  */
+session_start();
 
-require_once "form_signup.php";
-require_once "form_login.php";
+require_once "includes/form_signup.php";
+require_once "includes/form_login.php";
+require_once 'includes/add_article.php';
+
+if(isset($_SESSION['username']) && isset($_SESSION['email']) && isset($_SESSION['usertype']) && isset($_SESSION['promotion'])){
+    $username = $_SESSION['username'];
+    $email = $_SESSION['email'];
+    $usertype = $_SESSION['usertype'];
+    $promotion = $_SESSION['promotion'];
+}
 
 class events
 {
@@ -22,30 +31,36 @@ class events
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <?php require_once "header.php"; ?>
+    <?php require_once "includes/header.php"; ?>
 
 </head>
 <body>
 
-<br><br><br>
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<hr>
 
-<hr>
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
 
-<?php require_once "footer.php"; ?>
+    <div id="eventlists" style="padding-top:50px;">
+        liste de evenements
+        <div id="listeEvents"></div>
+        <!--IMAGE-->
+    </div>
+
+<script>
+    var user = '<?php echo $username ?>';
+    var usertype = '<?php echo $usertype ?>';
+</script>
+
+
+    <hr>
+    <br>LE FOOTER
+    <br>LE FOOTER
+    <br>LE FOOTER
+    <br>LE FOOTER
+    <br>LE FOOTER
+    <br>LE FOOTER
+    <br>LE FOOTER
+    <br>LE FOOTER
+    <br>LE FOOTER
+
+<?php require_once "includes/footer.php"; ?>
 </body>
 </html>

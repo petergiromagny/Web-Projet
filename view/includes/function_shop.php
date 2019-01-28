@@ -124,7 +124,7 @@
 
             }
 
-            return $total;
+            return $total + $total*$_SESSION['panier']['tva']/100;
 
         }
 
@@ -157,6 +157,10 @@
             if (isset($_SESSION['panier']['libellerProduit'])){
 
                 return count($_SESSION['panier']['libelleProduit']);
+
+            }else{
+
+                return 0;
 
             }
 

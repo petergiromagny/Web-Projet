@@ -139,14 +139,39 @@ function getEvents()
 }
 
 function afficheList(data,status){
-    console.log(data);
+    require_once 'add_article.php';
+    var tab = {name : 'Airsoft', description : 'activité airsoft', img : '../assets/image/slide1.JPG'};
     $('#listeEvents').empty();
     var item = '<table>';
     for (var i in data)
     {
-        item = item + '<tr><td>' + data[i].name  + '</td><td>' + data[i].description + "</td></tr><button>Sinscrire à l'événement</button>";
+        item = item + '<tr><td>' + tab.name  + '</td><td>' + tab.description + "</td></tr><button onclick='studentAdd();'>Sinscrire à l'événement</button>" +
+            "<img src=" +tab.img+" alt='Italian Trulli'>";
+        if(usertype == 3 || usertype == 2){
+            item = item + '<button>Supprimer cet image</button>';
+        }
     }
+
+    console.log(usertype);
     item = item + '</table>';
+    if(usertype == 3 || usertype == 2){
+        item = item + '<div><button type="button" onclick="document.getElementById(\'add_article\').style.display=\'block\'" class="" id="">Ajouter un événnement</button></div>'
+    }
     $('#listeEvents').append(item);
+
 }
+
+
+function studentAdd(){
+    $.ajax({
+        type: "POST",
+        url: "../controller/EventController.php?action=addstudent",
+        dataType: 'json',
+        data: {username: user}
+    });
+}
+
+
+
+
 

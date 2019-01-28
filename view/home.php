@@ -5,8 +5,8 @@
  * Date: 16/01/2019
  * Time: 12:42
  */
-require_once "form_signup.php";
-require_once "form_login.php";
+require_once "includes/form_signup.php";
+require_once "includes/form_login.php";
 
 /*session_start();*/
 
@@ -26,7 +26,7 @@ class home
 
     <link rel="stylesheet" href="../public/css/style.css">
 
-    <?php require_once 'header.php'; ?>
+    <?php require_once 'includes/header.php'; ?>
 
 </head>
 <body>
@@ -56,6 +56,6 @@ class home
             <button href="shop.php" class="btn-shop">Allez à la boutique</button>
     </div>
 
-<?php require_once 'footer.php'; ?>
+<?php require_once 'includes/footer.php'; ?>
 </body>
 </html>

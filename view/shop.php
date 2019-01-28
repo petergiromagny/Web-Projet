@@ -6,8 +6,8 @@
  * Time: 16:50
  */
 
-require_once "form_signup.php";
-require_once "form_login.php";
+require_once "includes/form_signup.php";
+require_once "includes/form_login.php";
 
 class shop
 {
@@ -27,7 +27,7 @@ class shop
 </head>
 <body>
 
-    <?php require_once "header.php"; ?>
+    <?php require_once "includes/header.php"; ?>
 
     <div class="main-container">
         <div class="left">
@@ -65,6 +65,6 @@ class shop
     </div>
 
 
-<?php require_once "footer.php"; ?>
+<?php require_once "includes/footer.php"; ?>
 </body>
 </html>

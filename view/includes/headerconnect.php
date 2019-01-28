@@ -19,7 +19,7 @@ class headerconnect
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="../public/css/header.css">
+    <link rel="stylesheet" href="../../public/css/header.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!--Our font family-->
@@ -40,9 +40,10 @@ class headerconnect
 </head>
 <body>
 
+
 <div class="wrapper">
     <!-- SIDEBAR  -->
-    <header id="sidebar">
+    <nav id="sidebar">
         <div class="sidebar-header">
             <h3>Menu</h3>
             <div class="line"></div>
@@ -50,11 +51,11 @@ class headerconnect
 
         <ul class="list-unstyled components">
             <li class="active">
-                <a href="home.php"><i class="fa fa-home"></i> Home</a>
-                <a href="shop.php"><i class="fas fa-shopping-cart"></i> Boutique</a>
-                <a href="events.php"><i class="far fa-calendar-alt"></i> Evénements</a>
-                <a href="idea.php"><i class="far fa-lightbulb"></i> Idées</a>
-                <a href="contactus.php"><i class="far fa-question-circle"></i> Contactez-nous</a>
+                <a href="../home.php"><i class="fa fa-home"></i> Home</a>
+                <a href="../shop.php"><i class="fas fa-shopping-cart"></i> Boutique</a>
+                <a href="../events.php"><i class="far fa-calendar-alt"></i> Evénements</a>
+                <a href="../idea.php"><i class="far fa-lightbulb"></i> Idées</a>
+                <a href="../contactus.php"><i class="far fa-question-circle"></i> Contactez-nous</a>
                 <a href="https://www.facebook.com/bdecesiaix/" target=_blank><i class="fab fa-facebook-f"></i> Facebook</a>
                 <a href="https://discord.gg/WCJtbnY" target=_blank><i class="fab fa-discord"></i> Discord</a>
         </ul>
@@ -81,7 +82,7 @@ class headerconnect
             <div class="title">
                 <span class="BDE">BDE </span><span>CESI AIX</span>
             </div>
-        </header>
+        </nav>
     </div>
 </div>
 
@@ -126,5 +127,6 @@ class headerconnect
 
 <?php require_once 'footer.php'; ?>
 
+<script type="text/javascript" src="Ajax.js"></script>
 </body>
 </html>

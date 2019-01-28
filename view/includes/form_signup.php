@@ -6,8 +6,6 @@
  * Time: 10:32
  */
 
-/*session_start();*/
-
 class form_signup
 {
 
@@ -18,6 +16,7 @@ class form_signup
 <!DOCTYPE html>
 <html lang="ENG">
 <head>
+    <title>signup</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -27,7 +26,7 @@ class form_signup
 
     <!--SIGN UP-->
     <div id="signup" class="modal-sign-up">
-        <form class="box-content-sign-up animate" id="signup-fo" name="form-signup" action="../controller/UserController.php?status=inscription" method="post">
+        <form class="box-content-sign-up animate" id="signup-fo" name="form-signup">
             <div class="imgcontainer">
                 <span onclick="document.getElementById('signup').style.display='none'" class="close" title="Close Modal">&times;</span>
             </div>
@@ -66,7 +65,7 @@ class form_signup
             </div>
             <div class="container" style="background-color:#f1f1f1"></div>
         </form>
-
+        <div class="overlay"></div>
     </div>
 
 
@@ -81,6 +80,21 @@ class form_signup
                 modal.style.display = "none";
             }
         }
+    </script>
+    <script>
+        var password = document.getElementById("password")
+            , confirm_password = document.getElementById("psw2");
+
+        function validatePassword(){
+            if(password.value != confirm_password.value) {
+                confirm_password.setCustomValidity("Les mots de passes de correspondent pas");
+            } else {
+                confirm_password.setCustomValidity('');
+            }
+        }
+
+        password.onchange = validatePassword;
+        confirm_password.onkeyup = validatePassword;
     </script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js">
     <script src="../controller/Ajax.js"></script>

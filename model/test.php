@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$username = $_SESSION['username'];
+$username = "alex";
 $mail = $_SESSION['email'];
 $usertype = $_SESSION['usertype'];
 ?>
@@ -12,6 +12,11 @@ $usertype = $_SESSION['usertype'];
     <title>salut</title>
 </head>
 <body>
+<script>
+    console.log('<?php
+            echo $username;
+        ?>');
+</script>
 <?php
     if(isset($_SESSION['email']) && isset($_SESSION['username'])){
         echo "<h1>Salut ".$username."</h1>";

@@ -13,8 +13,8 @@ if(isset($_SESSION['username']) && isset($_SESSION['email']) && isset($_SESSION[
     $usertype = $_SESSION['usertype'];
 }
 
-require_once "form_signup.php";
-require_once "form_login.php";
+require_once "includes/form_signup.php";
+require_once "includes/form_login.php";
 
 class idea
 {
@@ -29,13 +29,44 @@ class idea
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <?php require_once "header.php"; ?>
+    <?php require_once "includes/header.php"; ?>
 
 </head>
 <body>
 
 
+<br><br><br>
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<hr>
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<hr>
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
+<br>LE FOOTER
 
-    <?php require_once "footer.php"; ?>
+    <?php include "includes/footer.php"; ?>
 </body>
 </html>

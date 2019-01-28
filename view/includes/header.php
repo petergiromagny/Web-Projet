@@ -7,10 +7,6 @@
  */
 
 
-
-/*$mail = $_SESSION['email'];
-$password = $_SESSION['password'];*/
-
 class header
 {
 
@@ -49,11 +45,11 @@ class header
 
             <ul class="list-unstyled components">
                 <li class="active">
-                    <a href="home.php"><i class="fa fa-home"></i> Home</a>
-                    <a href="shop.php"><i class="fas fa-shopping-cart"></i> Boutique</a>
-                    <a href="events.php"><i class="far fa-calendar-alt"></i> Evénements</a>
-                    <a href="idea.php"><i class="far fa-lightbulb"></i> Idées</a>
-                    <a href="contactus.php"><i class="far fa-question-circle"></i> Contactez-nous</a>
+                    <a href="../view/home.php"><i class="fa fa-home"></i> Home</a>
+                    <a href="../view/shop.php"><i class="fas fa-shopping-cart"></i> Boutique</a>
+                    <a href="../view/events.php"><i class="far fa-calendar-alt"></i> Evénements</a>
+                    <a href="../view/idea.php"><i class="far fa-lightbulb"></i> Idées</a>
+                    <a href="../view/contactus.php"><i class="far fa-question-circle"></i> Contactez-nous</a>
                     <a href="https://www.facebook.com/bdecesiaix/" target=_blank><i class="fab fa-facebook-f"></i> Facebook</a>
                     <a href="https://discord.gg/WCJtbnY" target=_blank><i class="fab fa-discord"></i> Discord</a>
             </ul>
@@ -65,17 +61,8 @@ class header
                 <div class="container-fluid">
                     <button type="button" id="sidebarCollapse" class="btn-nav"><i class="fas fa-bars"></i></button>
                     <div>
-
-                        <?php /*if (!isset($_SESSION['username'])){
-                            echo '<button type="button" onclick="document.getElementById(\'signup\').style.display=\'block\'" class="btn-nav btn-sign-up" id="" style="width: auto;"><span class="glyphicon glyphicon-user"></span><i class="fas fa-user-plus"></i> Inscription</button>
-                                  <button type="button" onclick="document.getElementById(\'login\').style.display=\'block\'" class="btn-nav btn-sign-in" id="" style="width: auto;"><span class="glyphicon glyphicon-log-in"></span><i class="fas fa-sign-in-alt"></i> Connexion</button>';
-                            }
-                            else{
-                            echo '<button type="button" id="sidebarCollapse" class="btn-nav">Déconnexion</button>';
-                            }*/?>
                         <button type="button" onclick="document.getElementById('signup').style.display='block'" class="btn-nav btn-sign-up" id="" style="width: auto;"><span class="glyphicon glyphicon-user"></span><i class="fas fa-user-plus"></i> Inscription</button>
-                        <button type="button" onclick="document.getElementById('login').style.display='block'" class="btn-nav btn-sign-in" id="" style="width: auto;"><span class="glyphicon glyphicon-log-in"></span><i class="fas fa-sign-in-alt"></i> Connexion</button>';
-
+                        <button type="button" onclick="document.getElementById('login').style.display='block'" class="btn-nav btn-sign-in" id="" style="width: auto;"><span class="glyphicon glyphicon-log-in"></span><i class="fas fa-sign-in-alt"></i> Connexion</button>
                     </div>
                 </div>
                 <div class="title">
@@ -97,10 +84,12 @@ class header
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
     <!-- jQuery Custom Scroller CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="Ajax.js"></script>
 
 
     <!--SIDEBAR-->
     <script type="text/javascript">
+
         $(document).ready(function () {
             $("#sidebar").mCustomScrollbar({
                 theme: "minimal"
@@ -117,7 +106,8 @@ class header
                 $('.collapse.in').toggleClass('in');
                 $('a[aria-expanded=true]').attr('aria-expandsed', 'false');
             });
+            getEvents();
         });
     </script>
-    <script type="text/javascript" src="../controller/Ajax.js"></script>
+    <script type="text/javascript" src="Ajax.js"></script>
 
