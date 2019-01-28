@@ -14,7 +14,7 @@ $usertype = $_SESSION['usertype'];
 <body>
 <?php
     if(isset($_SESSION['email']) && isset($_SESSION['username'])){
-        echo "<h1>Wesh ".$username."</h1>";
+        echo "<h1>Salut ".$username."</h1>";
         if(isset($_SESSION['usertype']) && $usertype == 0){
             echo "<button>delete</button>";
         }
@@ -22,7 +22,7 @@ $usertype = $_SESSION['usertype'];
             echo "vous n'avez pas les droits pour supp";
         }
     }else{
-        echo "fdp";
+        echo "error";
     }
 ?>
 </body>

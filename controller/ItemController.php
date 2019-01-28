@@ -9,7 +9,7 @@
 include "../model/ItemModel.php";
 $bdd = new ItemModel();
 
-
+$action="";
 if(array_key_exists("action", $_GET)){
     $action = $_GET['action'];
 }
@@ -17,9 +17,15 @@ if(array_key_exists("action", $_GET)){
 if($action == "delete"){
     delete();
 }else{
-    inscription();
+    showItems();
 }
 
 function delete(){
     $id = $_POST['id'];
+}
+
+function showItems(){
+    global $bdd;
+
+    $bdd->showAllItems();
 }
