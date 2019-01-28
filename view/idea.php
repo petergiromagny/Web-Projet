@@ -84,11 +84,7 @@ class idea
     </div>
 
 
-    <div id="eventlists" style="padding-top:50px;">
-        liste de evenements
-        <div id="listeEvents"></div>
-        <!--IMAGE-->
-    </div>
+
 
     <!-- jQuery CDN - Slim version (=without AJAX) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -118,8 +114,6 @@ class idea
                 $('.collapse.in').toggleClass('in');
                 $('a[aria-expanded=true]').attr('aria-expanded', 'false');
             });
-
-            getEvents();
         });
     </script>
 </body>

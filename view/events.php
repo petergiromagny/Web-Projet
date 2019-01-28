@@ -76,6 +76,12 @@ class events
         <div class="overlay"></div>
     </div>
 
+    <div id="eventlists" style="padding-top:50px;">
+        liste de evenements
+        <div id="listeEvents"></div>
+        <!--IMAGE-->
+    </div>
+
     <!-- jQuery CDN - Slim version (=without AJAX) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Popper.JS -->
@@ -84,6 +90,7 @@ class events
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
     <!-- jQuery Custom Scroller CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="../controller/Ajax.js"></script>
 
     <!--SIDEBAR-->
     <script type="text/javascript">
@@ -103,6 +110,7 @@ class events
                 $('.collapse.in').toggleClass('in');
                 $('a[aria-expanded=true]').attr('aria-expanded', 'false');
             });
+            getEvents();
         });
     </script>
 </body>
