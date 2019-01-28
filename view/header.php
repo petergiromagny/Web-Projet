@@ -7,6 +7,10 @@
  */
 
 
+
+/*$mail = $_SESSION['email'];
+$password = $_SESSION['password'];*/
+
 class header
 {
 
@@ -61,8 +65,17 @@ class header
                 <div class="container-fluid">
                     <button type="button" id="sidebarCollapse" class="btn-nav"><i class="fas fa-bars"></i></button>
                     <div>
+
+                        <?php /*if (!isset($_SESSION['username'])){
+                            echo '<button type="button" onclick="document.getElementById(\'signup\').style.display=\'block\'" class="btn-nav btn-sign-up" id="" style="width: auto;"><span class="glyphicon glyphicon-user"></span><i class="fas fa-user-plus"></i> Inscription</button>
+                                  <button type="button" onclick="document.getElementById(\'login\').style.display=\'block\'" class="btn-nav btn-sign-in" id="" style="width: auto;"><span class="glyphicon glyphicon-log-in"></span><i class="fas fa-sign-in-alt"></i> Connexion</button>';
+                            }
+                            else{
+                            echo '<button type="button" id="sidebarCollapse" class="btn-nav">Déconnexion</button>';
+                            }*/?>
                         <button type="button" onclick="document.getElementById('signup').style.display='block'" class="btn-nav btn-sign-up" id="" style="width: auto;"><span class="glyphicon glyphicon-user"></span><i class="fas fa-user-plus"></i> Inscription</button>
-                        <button type="button" onclick="document.getElementById('login').style.display='block'" class="btn-nav btn-sign-in" id="" style="width: auto;"><span class="glyphicon glyphicon-log-in"></span><i class="fas fa-sign-in-alt"></i> Connexion</button>
+                        <button type="button" onclick="document.getElementById('login').style.display='block'" class="btn-nav btn-sign-in" id="" style="width: auto;"><span class="glyphicon glyphicon-log-in"></span><i class="fas fa-sign-in-alt"></i> Connexion</button>';
+
                     </div>
                 </div>
                 <div class="title">

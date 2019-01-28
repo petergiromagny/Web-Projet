@@ -6,8 +6,8 @@
  * Time: 16:50
  */
 
-include "form_signup.php";
-include "form_login.php";
+require_once "form_signup.php";
+require_once "form_login.php";
 
 class shop
 {
@@ -23,16 +23,11 @@ class shop
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="../public/css/shop.css">
-
-    <!--Our font family-->
-    <!--<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">-->
-
-
-
+    
 </head>
 <body>
 
-    <?php include "header.php"; ?>
+    <?php require_once "header.php"; ?>
 
     <div class="main-container">
         <div class="left">
@@ -70,6 +65,6 @@ class shop
     </div>
 
 
-<?php include "footer.php"; ?>
+<?php require_once "footer.php"; ?>
 </body>
 </html>

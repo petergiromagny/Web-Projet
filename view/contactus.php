@@ -8,8 +8,8 @@
 
 session_start();
 
-include "form_signup.php";
-include "form_login.php";
+require_once "form_signup.php";
+require_once "form_login.php";
 
 class contactus
 {
@@ -24,7 +24,7 @@ class contactus
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <?php include "header.php"; ?>
+    <?php require_once "header.php"; ?>
 
 </head>
 <body>
@@ -55,6 +55,6 @@ class contactus
     </form>
 </div>
 
-<?php include "footer.php"; ?>
+<?php require_once "footer.php"; ?>
 </body>
 </html>

@@ -6,7 +6,6 @@
  * Time: 10:32
  */
 
-
 class form_login
 {
 
@@ -26,7 +25,7 @@ class form_login
 <body>
     <!--LOGIN CONNEXION-->
     <div id="login" class="modal">
-        <form class="box-content-login animate" id="form-login" action="">
+        <form class="box-content-login animate" id="form-login" method="POST" action="">
             <div class="imgcontainer">
                 <span onclick="document.getElementById('login').style.display='none'" class="close" title="Close Modal">&times;</span>
             </div>
@@ -43,9 +42,9 @@ class form_login
                 }
                 */?>
 
-                <input type="password" placeholder="Entrez votre mot de passe" name="psw" <!--value="--><?php /*if (isset($password)) echo $password; */?>" required="required">
+                <input type="password" placeholder="Entrez votre mot de passe" name="password" <!--value="--><?php /*if (isset($password)) echo $password; */?>" required="required">
 
-                <button class="btn-login" type="submit">Login</button>
+                <button class="btn-login" type="submit" name="submit">Login</button>
                 <label style="float: right">
                     <input type="checkbox" checked="checked" name="remember"> Remember me
                 </label>

@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-$username = $_SESSION['peter'];
-$mail = $_SESSION['peter.giromagny@viacesi.fr'];
+$username = $_SESSION['username'];
+$mail = $_SESSION['email'];
 $usertype = $_SESSION['usertype'];
 ?>
 <!DOCTYPE html>
