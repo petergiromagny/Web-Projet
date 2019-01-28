@@ -5,8 +5,13 @@
  * Date: 22/01/2019
  * Time: 13:11
  */
-
 session_start();
+
+if(isset($_SESSION['username']) && isset($_SESSION['email']) && isset($_SESSION['usertype'])){
+    $username = $_SESSION['username'];
+    $email = $_SESSION['email'];
+    $usertype = $_SESSION['usertype'];
+}
 
 include "form_signup.php";
 include "form_login.php";
@@ -29,37 +34,7 @@ class idea
 </head>
 <body>
 
-<br><br><br>
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<hr>
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<hr>
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
+
 
     <?php include "footer.php"; ?>
 </body>

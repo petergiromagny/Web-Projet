@@ -123,3 +123,30 @@
     });
 }) ();
 
+function getEvents()
+{
+    $.ajax({
+        url: "../controller/ItemController.php?action=showItems",
+        type: "GET",
+        dataType: "json",
+        beforeSend: function () {console.log("getevents");},
+        success: afficheList,
+        error: function (data) {
+            console.log("error");
+            console.log(data);
+        }
+    });
+}
+
+function afficheList(data,status){
+    console.log(data);
+    $('#listeEvents').empty();
+    var item = '<table>';
+    for (var i in data)
+    {
+        item = item + '<tr><td>' + data[i].name  + '</td><td>' + data[i].description + "</td></tr><button>Sinscrire à l'événement</button>";
+    }
+    item = item + '</table>';
+    $('#listeEvents').append(item);
+}
+

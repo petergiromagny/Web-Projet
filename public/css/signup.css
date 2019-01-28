@@ -60,7 +60,7 @@ span.psw {
 /* Modal Content/Box */
 .box-content-sign-up {
     background-color: #fefefe;
-    margin: 4% auto 10% auto; /* 5% from the top, 15% from the bottom and centered */
+    margin: auto auto 10% auto; /* 5% from the top, 15% from the bottom and centered */
     border: 1px solid #888;
     width: 50%; /* Could be more or less, depending on screen size */
 }

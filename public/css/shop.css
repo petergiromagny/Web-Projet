@@ -21,7 +21,7 @@ body {
     overflow: hidden;
 }
 
-.btn{
+.btn-buy{
     position: absolute;
     width: 18%;
     border: none;
@@ -29,10 +29,6 @@ body {
     padding: 5px 13px 5px 13px;
     background-color: #000000 !important;
     color: #fbfbff !important;
-}
-
-button:hover{
-    opacity: 0.8;
 }
 
 .image {

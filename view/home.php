@@ -26,20 +26,8 @@ class home
 
     <?php include_once 'header.php'; ?>
 
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">-->
-
-
 </head>
 <body>
-
-
-    <!--<div class="container-img">
-        <img src="../assets/image/slide1.JPG" alt="Nature" style="width:100%;">
-        <div class="text-block">
-            <h4>Activité Airsoft</h4>
-            <a href="events.php" class="link">Plus d'information sur cette activitée</a>
-        </div>
-    </div>-->
 
     <div class="container-slide">
         <!-- Wrapper for slides -->
@@ -65,9 +53,6 @@ class home
             </div>
             <button href="shop.php" class="btn-shop">Allez à la boutique</button>
     </div>
-
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>-->
 
 <?php include_once 'footer.php'; ?>
 </body>
