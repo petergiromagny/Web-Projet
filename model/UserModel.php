@@ -18,7 +18,7 @@ class UserModel {
 
 
 
-        $test = $this->pdo->prepare("SELECT username FROM users WHERE username = :username");
+        $test = $this->pdo->prepare("SELECT username FROM utilisateur WHERE username = :username");
         $test->execute(array("username" => $username));
 
         if($test->rowCount() >= 1) {
@@ -32,7 +32,7 @@ class UserModel {
     private function register($username, $password, $firstname, $lastname, $promotion, $mail){
 
 
-        $requete = $this->pdo->prepare("INSERT INTO users SET username = :username, password = sha1(:password), first_name = :firstname, last_name = :lastname, promotion =  :promotion, mail = :mail");
+        $requete = $this->pdo->prepare("INSERT INTO utilisateur SET username = :username, password = sha1(:password), first_name = :firstname, last_name = :lastname, promotion =  :promotion, mail = :mail");
 
         $requete->execute([
             "username" => $username,
@@ -52,20 +52,22 @@ class UserModel {
         if(empty($mail) || empty($password)) {
             $retour->message = 'Les champs ne sont pas remplis';
         } else {
-            $requete = $this->pdo->prepare("SELECT * FROM users WHERE mail = :mail");
+            $requete = $this->pdo->prepare("SELECT * FROM utilisateur WHERE mail = :mail");
             $requete->execute(array("mail" => $mail));
 
             $result = $requete->fetch(PDO::FETCH_ASSOC);
             if($result['password'] = sha1($password)){
                 $username = $result['username'];
                 $usertype = $result['user_type'];
+                $promotion = $result['promotion'];
                 if($requete->rowCount() > 0){
-                    $retour->success = true;
                     session_start();
+                    $retour->success = true;
                     $_SESSION['email'] = $mail;
                     $_SESSION['username'] = $username;
                     $_SESSION['usertype'] = $usertype;
-                    $retour->url_redirect = '../model/test.php';
+                    $_SESSION['promotion'] = $promotion;
+                    $retour->url_redirect = '../view/events.php';
                 } else {
                     $retour->message = 'Erreur';
                 }

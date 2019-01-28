@@ -6,7 +6,6 @@
  * Time: 16:23
  */
 
-
 class header
 {
 
@@ -89,6 +88,7 @@ class header
 
     <!--SIDEBAR-->
     <script type="text/javascript">
+
         $(document).ready(function () {
             $("#sidebar").mCustomScrollbar({
                 theme: "minimal"

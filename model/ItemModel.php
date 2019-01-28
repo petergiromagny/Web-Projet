@@ -16,16 +16,10 @@ class ItemModel{
 
     public function showAllItems(){
 
-        $stmt = $this->pdo->prepare("SELECT * FROM article");
+        $stmt = $this->pdo->prepare("SELECT * FROM evenement");
         $stmt->execute();
 
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-
-        /*foreach ($result as $object){
-            echo "<div class='Eventname'>Evenement : ".$object['name']."<br></div>";
-            echo "<div class='Eventdesc'>Description : ".$object['description']."<br></div>";
-        }*/
 
         header('Cache-Control: no-cache, must-revalidate');
         header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
@@ -34,14 +28,14 @@ class ItemModel{
     }
     public function deleteItem($id){
 
-        $stmt = $this->pdo->prepare("DELETE * FROM article where id = :id");
+        $stmt = $this->pdo->prepare("DELETE * FROM evenement where id = :id");
         $stmt->bindParam('id',$id);
         $stmt->execute();
 
     }
 
     public function addItem($champs){
-        $stmt = $this->pdo->prepare("INSERT INTO article (champs) VALUES ()");
+        $stmt = $this->pdo->prepare("INSERT INTO evenement (champs) VALUES ()");
         $stmt->execute();
     }
 }

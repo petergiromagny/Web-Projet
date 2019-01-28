@@ -26,7 +26,7 @@ class form_signup
 
     <!--SIGN UP-->
     <div id="signup" class="modal-sign-up">
-        <form class="box-content-sign-up animate" id="signup-fo" name="form-signup" action="../controller/UserController.php?status=inscription" method="post">
+        <form class="box-content-sign-up animate" id="signup-fo" name="form-signup">
             <div class="imgcontainer">
                 <span onclick="document.getElementById('signup').style.display='none'" class="close" title="Close Modal">&times;</span>
             </div>

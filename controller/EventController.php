@@ -6,8 +6,10 @@
  * Time: 09:19
  */
 
-include "../model/ItemModel.php";
-$bdd = new ItemModel();
+include "../model/EventModel.php";
+$bdd = new EventModel();
+
+$username = $_POST['username'];
 
 $action="";
 if(array_key_exists("action", $_GET)){
@@ -15,16 +17,15 @@ if(array_key_exists("action", $_GET)){
 }
 
 if($action == "addstudent"){
-    addStudent();
+    addStudent($username);
 }else{
     showItems();
 }
 
-function delete(){
+function addStudent($username){
     global $bdd;
 
-    $id = $_POST['id'];
-    $bdd->deleteItem($id);
+    $bdd->addStudent($username);
 }
 
 function showItems(){

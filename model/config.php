@@ -8,5 +8,5 @@
 
 require_once 'singleton.php';
 
-singleton::setConfig('mysql:host=localhost;dbname=projet_web;charset=latin1', 'root', '');
+singleton::setConfig('mysql:host=localhost;dbname=web_projet;charset=utf8', 'root', '');
 ?>

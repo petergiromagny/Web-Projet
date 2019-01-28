@@ -5,9 +5,17 @@
  * Date: 22/01/2019
  * Time: 13:11
  */
+session_start();
 
 include "form_signup.php";
 include "form_login.php";
+
+if(isset($_SESSION['username']) && isset($_SESSION['email']) && isset($_SESSION['usertype']) && isset($_SESSION['promotion'])){
+    $username = $_SESSION['username'];
+    $email = $_SESSION['email'];
+    $usertype = $_SESSION['usertype'];
+    $promotion = $_SESSION['promotion'];
+}
 
 class events
 {
@@ -35,7 +43,10 @@ class events
         <!--IMAGE-->
     </div>
 
-
+<script>
+    var user = '<?php echo $username ?>';
+    var usertype = '<?php echo $usertype ?>';
+</script>
 
 <hr>
 <br>LE FOOTER
