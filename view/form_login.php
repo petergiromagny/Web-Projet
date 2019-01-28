@@ -32,7 +32,7 @@ class form_login
                 <span onclick="document.getElementById('login').style.display='none'" class="close" title="Close Modal">&times;</span>
             </div>
 
-            <div class="container">
+            <div class="container-login">
                 <label for="mail"><b>E-Mail</b></label>
                 <input type="text" placeholder="Entrez votre e-mail" name="email" id="email" required>
 
@@ -66,7 +66,6 @@ class form_login
             }
         }
     </script>
-         <script src="https://code.jquery.com/jquery-3.1.1.min.js">
-        <script src="../controller/Ajax.js"></script>
+
 </body>
 </html>

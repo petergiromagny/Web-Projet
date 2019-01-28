@@ -2,11 +2,11 @@
 /**
  * Created by PhpStorm.
  * User: peter
- * Date: 22/01/2019
- * Time: 13:38
+ * Date: 23/01/2019
+ * Time: 10:05
  */
 
-class home_connection
+class headerconnect
 {
 
 }
@@ -15,11 +15,11 @@ class home_connection
 <!DOCTYPE html>
 <html lang="ENG">
 <head>
-    <title>Home</title>
+    <title></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="stylesheet" href="../public/css/header.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!--Our font family-->
@@ -34,11 +34,10 @@ class home_connection
 
     <!-- Font Awesome JS -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <!--<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>-->
 
 </head>
 <body>
+
 
 <div class="wrapper">
     <!-- SIDEBAR  -->
@@ -53,7 +52,7 @@ class home_connection
                 <a href="home.php"><i class="fa fa-home"></i> Home</a>
                 <a href="events.php"><i class="far fa-calendar-alt"></i> Evénements</a>
                 <a href="idea.php"><i class="far fa-lightbulb"></i> Idées</a>
-                <a href="contact_us.php"><i class="far fa-question-circle"></i> Contactez-nous</a>
+                <a href="contactus.php"><i class="far fa-question-circle"></i> Contactez-nous</a>
                 <a href="https://www.facebook.com/bdecesiaix/" target=_blank><i class="fab fa-facebook-f"></i> Facebook</a>
                 <a href="https://discord.gg/WCJtbnY" target=_blank><i class="fab fa-discord"></i> Discord</a>
         </ul>
@@ -65,7 +64,7 @@ class home_connection
             <div class="container-fluid">
                 <button type="button" id="sidebarCollapse" class="btn-nav"><i class="fas fa-bars"></i></button>
                 <div>
-                    <button type="button" class="btn-nav btn-sign-up" id="" style="width: auto;"><span class="glyphicon glyphicon-user"></span><i class="fas fa-user"></i> Bonjour <?php echo $_SESSION['pseudo']; ?></button>
+                    <button type="button" onclick="" class="btn-nav btn-sign-in"  style="width: auto;"><span class="glyphicon glyphicon-log-in"></span>Déconnexion</button>
                 </div>
             </div>
             <div class="title">
@@ -73,8 +72,9 @@ class home_connection
             </div>
         </nav>
     </div>
-
 </div>
+
+
 
 <div class="overlay"></div>
 
@@ -104,9 +104,10 @@ class home_connection
             $('#sidebar').addClass('active');
             $('.overlay').addClass('active');
             $('.collapse.in').toggleClass('in');
-            $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            $('a[aria-expanded=true]').attr('aria-expandsed', 'false');
         });
     });
 </script>
+<script type="text/javascript" src="Ajax.js"></script>
 </body>
 </html>

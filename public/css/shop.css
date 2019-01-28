@@ -1,0 +1,56 @@
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+*:focus {
+    outline: none !important;
+}
+
+.main-container{
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.left{
+    display: inline-block;
+    margin: 30px 34px;
+    width:20%;
+    height:300px;
+    float: left;
+    overflow: hidden;
+}
+
+.btn{
+    position: absolute;
+    width: 18%;
+    border: none;
+    cursor: pointer;
+    padding: 5px 13px 5px 13px;
+    background-color: #000000 !important;
+    color: #fbfbff !important;
+}
+
+button:hover{
+    opacity: 0.8;
+}
+
+.image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height:100%;
+    border:2px solid #000000;
+    box-sizing: border-box;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    overflow: hidden;
+}
+
+@media screen and (max-width:1250px) {
+    .left {
+        width: 30%;
+        margin-left: 40px;
+
+    }
+}
