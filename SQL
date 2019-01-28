@@ -1,0 +1,424 @@
+-- phpMyAdmin SQL Dump
+-- version 4.8.3
+-- https://www.phpmyadmin.net/
+--
+-- Hôte : 127.0.0.1:3306
+-- Généré le :  mer. 23 jan. 2019 à 16:36
+-- Version du serveur :  8.0.11
+-- Version de PHP :  7.2.10
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de données :  `projet_web`
+--
+
+DELIMITER $$
+--
+-- Procédures
+--
+DROP PROCEDURE IF EXISTS `Ajouter un Article`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Ajouter un Article` (IN `NameArt` VARCHAR(100), IN `Descrip` VARCHAR(100), IN `Urlim` VARCHAR(100), IN `Price` FLOAT(40), IN `StatArt` INT(250), IN `Stockdisp` BOOLEAN, IN `Quantstock` INT(250), IN `ID_C` INT(50))  NO SQL
+BEGIN
+	INSERT INTO article (Nom,Description,Url,Prix,Nombre_Vendu,Stock_Disponible,Quantite_Stock,ID_Categorie)
+	VALUES (NameArt,Descrip,Urlim,Price,StatArt,Stockdisp,Quantstock,ID_C);
+    COMMIT;
+ END$$
+
+DROP PROCEDURE IF EXISTS `Ajouter un Centre CESI`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Ajouter un Centre CESI` (IN `Center` VARCHAR(20))  BEGIN
+	INSERT INTO CENTRE (Centre)
+	VALUES (Center);
+    COMMIT;
+ END$$
+
+DROP PROCEDURE IF EXISTS `Ajouter un Evenement`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Ajouter un Evenement` (IN `Name` VARCHAR(50), IN `Descrip` VARCHAR(250), IN `Datecrea` DATE, IN `Datestart` DATE, IN `Dateend` DATE, IN `Place` VARCHAR(40), IN `Info` VARCHAR(250), IN `CounterDisp` INT(51), IN `Counter` INT(51), IN `Epass` BOOLEAN)  NO SQL
+BEGIN
+	START TRANSACTION;
+		INSERT INTO EVENEMENT (Nom,Description,Date_Creation,Date_Debut,Date_Fin,Lieu,Informations,Nombre_participants,Places_Disponibles,Evenement_Passe)
+		VALUES (Name,Descrip,Datecrea,Datestart,Dateend,Place,Info,Counter,CounterDisp,Epass);
+    COMMIT;
+ END$$
+
+DROP PROCEDURE IF EXISTS `Ajouter un Statut`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Ajouter un Statut` (IN `state` VARCHAR(25))  BEGIN
+	INSERT INTO Statut (Statut)
+	VALUES (state);
+    COMMIT;
+ END$$
+
+DROP PROCEDURE IF EXISTS `Ajouter un Utilisateur`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Ajouter un Utilisateur` (IN `Name` VARCHAR(30), IN `Surname` VARCHAR(30), IN `Email` VARCHAR(30), IN `Mdp` VARCHAR(30), IN `ID_S` INT(10), IN `ID_C` INT(100))  BEGIN
+	START TRANSACTION;
+		INSERT INTO UTILISATEUR (Nom,Prenom,Mail,PassWord,ID_Statut,ID_CENTRE)
+		VALUES (Name,Surname,Email,Mdp,ID_S,ID_C);
+    COMMIT;
+ END$$
+
+DROP PROCEDURE IF EXISTS `Ajouter une Catégorie`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Ajouter une Catégorie` (IN `NameCate` VARCHAR(20), IN `Useman` INT(250))  BEGIN
+	INSERT INTO categorie (Nom,ID_UTILISATEUR)
+	VALUES (NameCate,Useman);
+    COMMIT;
+ END$$
+
+DELIMITER ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `article`
+--
+
+DROP TABLE IF EXISTS `article`;
+CREATE TABLE IF NOT EXISTS `article` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `Nom` varchar(2000) NOT NULL,
+  `Description` varchar(2000) NOT NULL,
+  `Url` varchar(2000) NOT NULL,
+  `Prix` decimal(15,3) NOT NULL,
+  `Nombre_Vendu` int(11) NOT NULL,
+  `Stock_Disponible` tinyint(1) NOT NULL,
+  `Quantite_Stock` int(11) NOT NULL,
+  `ID_CATEGORIE` int(11) NOT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `ARTICLE_CATEGORIE_FK` (`ID_CATEGORIE`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `article`
+--
+
+INSERT INTO `article` (`ID`, `Nom`, `Description`, `Url`, `Prix`, `Nombre_Vendu`, `Stock_Disponible`, `Quantite_Stock`, `ID_CATEGORIE`) VALUES
+(1, 'Asics JR', 'Nouvelles Asics crées par Neymar JR', '/Images/Asics/Neymar', '999.000', 0, 1, 10, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `article_utilisateur`
+--
+
+DROP TABLE IF EXISTS `article_utilisateur`;
+CREATE TABLE IF NOT EXISTS `article_utilisateur` (
+  `ID` int(11) NOT NULL,
+  `ID_UTILISATEUR` int(11) NOT NULL,
+  PRIMARY KEY (`ID`,`ID_UTILISATEUR`),
+  KEY `ARTICLE_UTILISATEUR_UTILISATEUR0_FK` (`ID_UTILISATEUR`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `categorie`
+--
+
+DROP TABLE IF EXISTS `categorie`;
+CREATE TABLE IF NOT EXISTS `categorie` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `Nom` varchar(1000) NOT NULL,
+  `ID_UTILISATEUR` int(11) NOT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `CATEGORIE_UTILISATEUR_FK` (`ID_UTILISATEUR`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `categorie`
+--
+
+INSERT INTO `categorie` (`ID`, `Nom`, `ID_UTILISATEUR`) VALUES
+(1, 'Chaussures', 2),
+(2, 'Chaussettes', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `centre`
+--
+
+DROP TABLE IF EXISTS `centre`;
+CREATE TABLE IF NOT EXISTS `centre` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `Centre` varchar(50) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `centre`
+--
+
+INSERT INTO `centre` (`ID`, `Centre`) VALUES
+(1, 'Aix-En-Provence'),
+(2, 'Nice'),
+(3, 'Paris');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `commande`
+--
+
+DROP TABLE IF EXISTS `commande`;
+CREATE TABLE IF NOT EXISTS `commande` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `Prix` decimal(15,3) NOT NULL,
+  `ID_UTILISATEUR` int(11) NOT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `COMMANDE_UTILISATEUR_FK` (`ID_UTILISATEUR`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `commande_article`
+--
+
+DROP TABLE IF EXISTS `commande_article`;
+CREATE TABLE IF NOT EXISTS `commande_article` (
+  `ID` int(11) NOT NULL,
+  `ID_ARTICLE` int(11) NOT NULL,
+  `Quantite` int(11) NOT NULL,
+  PRIMARY KEY (`ID`,`ID_ARTICLE`),
+  KEY `COMMANDE_ARTICLE_ARTICLE0_FK` (`ID_ARTICLE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `commentaire`
+--
+
+DROP TABLE IF EXISTS `commentaire`;
+CREATE TABLE IF NOT EXISTS `commentaire` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `Commentaire` varchar(200) NOT NULL,
+  `ID_UTILISATEUR` int(11) NOT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `COMMENTAIRE_UTILISATEUR_FK` (`ID_UTILISATEUR`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `commentaire_image`
+--
+
+DROP TABLE IF EXISTS `commentaire_image`;
+CREATE TABLE IF NOT EXISTS `commentaire_image` (
+  `ID` int(11) NOT NULL,
+  `ID_COMMENTAIRE` int(11) NOT NULL,
+  PRIMARY KEY (`ID`,`ID_COMMENTAIRE`),
+  KEY `COMMENTAIRE_IMAGE_COMMENTAIRE0_FK` (`ID_COMMENTAIRE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `evenement`
+--
+
+DROP TABLE IF EXISTS `evenement`;
+CREATE TABLE IF NOT EXISTS `evenement` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `Nom` varchar(200) NOT NULL,
+  `Description` varchar(200) NOT NULL,
+  `Date_Creation` date NOT NULL,
+  `Date_Debut` date NOT NULL,
+  `Date_Fin` date NOT NULL,
+  `Lieu` varchar(200) NOT NULL,
+  `Informations` varchar(200) NOT NULL,
+  `Nombre_Participants` int(11) NOT NULL,
+  `Places_Disponibles` int(11) NOT NULL,
+  `Evenement_Passe` tinyint(1) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `evenement`
+--
+
+INSERT INTO `evenement` (`ID`, `Nom`, `Description`, `Date_Creation`, `Date_Debut`, `Date_Fin`, `Lieu`, `Informations`, `Nombre_Participants`, `Places_Disponibles`, `Evenement_Passe`) VALUES
+(1, 'Pétanque', 'Activité BDE', '2019-01-24', '2019-01-30', '2019-01-30', 'Europôle de l\'Arbois', '5 euro l\'entrée et membre du CESI obligatoire', 9, 30, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `evenement_image`
+--
+
+DROP TABLE IF EXISTS `evenement_image`;
+CREATE TABLE IF NOT EXISTS `evenement_image` (
+  `ID` int(11) NOT NULL,
+  `ID_IMAGE` int(11) NOT NULL,
+  PRIMARY KEY (`ID`,`ID_IMAGE`),
+  KEY `EVENEMENT_IMAGE_IMAGE0_FK` (`ID_IMAGE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `image`
+--
+
+DROP TABLE IF EXISTS `image`;
+CREATE TABLE IF NOT EXISTS `image` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `Url` varchar(200) NOT NULL,
+  `Jaime` int(11) NOT NULL,
+  `ID_UTILISATEUR` int(11) NOT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `IMAGE_UTILISATEUR_FK` (`ID_UTILISATEUR`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `statut`
+--
+
+DROP TABLE IF EXISTS `statut`;
+CREATE TABLE IF NOT EXISTS `statut` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `Statut` varchar(50) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `statut`
+--
+
+INSERT INTO `statut` (`ID`, `Statut`) VALUES
+(1, 'Salariés CESI'),
+(2, 'Membre du BDE'),
+(3, 'Élève CESI');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `utilisateur`
+--
+
+DROP TABLE IF EXISTS `utilisateur`;
+CREATE TABLE IF NOT EXISTS `utilisateur` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `Nom` varchar(50) NOT NULL,
+  `Prenom` varchar(50) NOT NULL,
+  `Password` varchar(50) NOT NULL,
+  `Mail` varchar(50) NOT NULL,
+  `ID_STATUT` int(11) NOT NULL,
+  `ID_CENTRE` int(11) NOT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `UTILISATEUR_STATUT_FK` (`ID_STATUT`),
+  KEY `UTILISATEUR_CENTRE0_FK` (`ID_CENTRE`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `utilisateur`
+--
+
+INSERT INTO `utilisateur` (`ID`, `Nom`, `Prenom`, `Password`, `Mail`, `ID_STATUT`, `ID_CENTRE`) VALUES
+(2, 'Clément', 'Bouclier', 'adminroot', 'clement.bouclier@viacesi.fr', 2, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `utilisateur_evenement`
+--
+
+DROP TABLE IF EXISTS `utilisateur_evenement`;
+CREATE TABLE IF NOT EXISTS `utilisateur_evenement` (
+  `ID` int(11) NOT NULL,
+  `ID_UTILISATEUR` int(11) NOT NULL,
+  PRIMARY KEY (`ID`,`ID_UTILISATEUR`),
+  KEY `UTILISATEUR_EVENEMENT_UTILISATEUR0_FK` (`ID_UTILISATEUR`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Contraintes pour les tables déchargées
+--
+
+--
+-- Contraintes pour la table `article`
+--
+ALTER TABLE `article`
+  ADD CONSTRAINT `ARTICLE_CATEGORIE_FK` FOREIGN KEY (`ID_CATEGORIE`) REFERENCES `categorie` (`id`);
+
+--
+-- Contraintes pour la table `article_utilisateur`
+--
+ALTER TABLE `article_utilisateur`
+  ADD CONSTRAINT `ARTICLE_UTILISATEUR_ARTICLE_FK` FOREIGN KEY (`ID`) REFERENCES `article` (`id`),
+  ADD CONSTRAINT `ARTICLE_UTILISATEUR_UTILISATEUR0_FK` FOREIGN KEY (`ID_UTILISATEUR`) REFERENCES `utilisateur` (`id`);
+
+--
+-- Contraintes pour la table `categorie`
+--
+ALTER TABLE `categorie`
+  ADD CONSTRAINT `CATEGORIE_UTILISATEUR_FK` FOREIGN KEY (`ID_UTILISATEUR`) REFERENCES `utilisateur` (`id`);
+
+--
+-- Contraintes pour la table `commande`
+--
+ALTER TABLE `commande`
+  ADD CONSTRAINT `COMMANDE_UTILISATEUR_FK` FOREIGN KEY (`ID_UTILISATEUR`) REFERENCES `utilisateur` (`id`);
+
+--
+-- Contraintes pour la table `commande_article`
+--
+ALTER TABLE `commande_article`
+  ADD CONSTRAINT `COMMANDE_ARTICLE_ARTICLE0_FK` FOREIGN KEY (`ID_ARTICLE`) REFERENCES `article` (`id`),
+  ADD CONSTRAINT `COMMANDE_ARTICLE_COMMANDE_FK` FOREIGN KEY (`ID`) REFERENCES `commande` (`id`);
+
+--
+-- Contraintes pour la table `commentaire`
+--
+ALTER TABLE `commentaire`
+  ADD CONSTRAINT `COMMENTAIRE_UTILISATEUR_FK` FOREIGN KEY (`ID_UTILISATEUR`) REFERENCES `utilisateur` (`id`);
+
+--
+-- Contraintes pour la table `commentaire_image`
+--
+ALTER TABLE `commentaire_image`
+  ADD CONSTRAINT `COMMENTAIRE_IMAGE_COMMENTAIRE0_FK` FOREIGN KEY (`ID_COMMENTAIRE`) REFERENCES `commentaire` (`id`),
+  ADD CONSTRAINT `COMMENTAIRE_IMAGE_IMAGE_FK` FOREIGN KEY (`ID`) REFERENCES `image` (`id`);
+
+--
+-- Contraintes pour la table `evenement_image`
+--
+ALTER TABLE `evenement_image`
+  ADD CONSTRAINT `EVENEMENT_IMAGE_EVENEMENT_FK` FOREIGN KEY (`ID`) REFERENCES `evenement` (`id`),
+  ADD CONSTRAINT `EVENEMENT_IMAGE_IMAGE0_FK` FOREIGN KEY (`ID_IMAGE`) REFERENCES `image` (`id`);
+
+--
+-- Contraintes pour la table `image`
+--
+ALTER TABLE `image`
+  ADD CONSTRAINT `IMAGE_UTILISATEUR_FK` FOREIGN KEY (`ID_UTILISATEUR`) REFERENCES `utilisateur` (`id`);
+
+--
+-- Contraintes pour la table `utilisateur`
+--
+ALTER TABLE `utilisateur`
+  ADD CONSTRAINT `UTILISATEUR_CENTRE0_FK` FOREIGN KEY (`ID_CENTRE`) REFERENCES `centre` (`id`),
+  ADD CONSTRAINT `UTILISATEUR_STATUT_FK` FOREIGN KEY (`ID_STATUT`) REFERENCES `statut` (`id`);
+
+--
+-- Contraintes pour la table `utilisateur_evenement`
+--
+ALTER TABLE `utilisateur_evenement`
+  ADD CONSTRAINT `UTILISATEUR_EVENEMENT_EVENEMENT_FK` FOREIGN KEY (`ID`) REFERENCES `evenement` (`id`),
+  ADD CONSTRAINT `UTILISATEUR_EVENEMENT_UTILISATEUR0_FK` FOREIGN KEY (`ID_UTILISATEUR`) REFERENCES `utilisateur` (`id`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -11,12 +11,20 @@ session_start();
 include "form_signup.php";
 include "form_login.php";
 
-class contactus
+?>
+<?php
+if(isset($_POST['Mailform']))
 {
+    if(!empty($_POST['Mail']) AND !empty($_POST['Message']))
+    {
 
+    }
+    else
+    {
+        $msg="Tout les champs doivent être complétés!";
+    }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="ENG">
 <head>
@@ -27,34 +35,20 @@ class contactus
     <?php include "header.php"; ?>
 
 </head>
-<body>
+    <body>
+        <form method=""POST" action="">
+            <h2> Contactez nous par mail ! </h2>
 
-<div class="container">
-    <form action="contactus.php">
-
-        <label for="fname">First Name</label>
-        <input type="text" id="fname" name="firstname" placeholder="Votre prénom ...">
-
-        <label for="lname">Last Name</label>
-        <input type="text" id="lname" name="lastname" placeholder="Votre nom ...">
-
-        <label for="class">Classe</label>
-        <select id="class" name="Classe">
-            <option value="A1">A1</option>
-            <option value="A2">A2</option>
-            <option value="A3">A3</option>
-            <option value="A4">A4</option>
-            <option value="A5">A5</option>
-        </select>
-
-        <label for="subject">Subject</label>
-        <textarea id="subject" name="subject" placeholder="Dites nous en plus ..." style="height:200px"></textarea>
-
-        <input type="Envoyer" value="Envoyer">
-
-    </form>
-</div>
-
-<?php include "footer.php"; ?>
-</body>
+                        <input type="email" name="Mail" placeholder="Votre mail ..."><br><br />
+                        <textarea type="text" name="Message" placeholder="Votre message..."></textarea><br><br />
+                        <input type="submit" value="Envoyer" name=""Mailform"><br><br />
+        </form>
+    <?php
+        if(isset($msg))
+        {
+            echo($msg);
+        }
+    ?>
+    <?php include "footer.php"; ?>
+    </body>
 </html>
