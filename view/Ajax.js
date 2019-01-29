@@ -52,7 +52,7 @@
 
         request.done(function (data){
             // Log a message to the console
-            window.location = "../view/home.php";
+            window.location = "home.php";
 
 
             console.log("Ok!");
@@ -126,6 +126,52 @@
     });
 }) ();
 
+(function () {
+    "use strict";
+
+    var request_login;
+
+    $("#add-article-fo").submit(function (event) {
+        event.preventDefault();
+
+        if(request_login){
+            request.abort();
+        }
+
+        var $form = $(this);
+
+        var $inputs = $form.find("input, select, button, textarea");
+
+        var serializedData = $form.serialize();
+
+        $inputs.prop("disabled", true);
+
+        request_login = $.ajax({
+            url: "../controller/EventController.php?action=addEvent",
+            type: "post",
+            data: serializedData
+        });
+
+        request_login.done(function (data){
+
+            console.log("Ok!");
+        });
+
+        request_login.fail(function (jqXHR, textStatus, errorThrown){
+            // Log the error to the console
+            console.error(
+                "The following error occurred: "+
+                textStatus, errorThrown
+            );
+        });
+
+        request_login.always(function () {
+            // Reenable the inputs
+            $inputs.prop("disabled", false);
+        });
+    });
+}) ();
+
 function getEvents()
 {
     $.ajax({
@@ -146,10 +192,11 @@ function afficheList(data,status){
     var item = '<table>';
     for (var i in data)
     {
-        item = item + '<tr><td>' + data[i].name  + '</td><td>' + data[i].description + "</td></tr><button onclick='studentAdd();'>Sinscrire à l'événement</button>" +
-            "<img src="+ data[i].image  +" alt='Airsoft'>";
+        item = item + "<tr><td class='image_event'><img class='image' src="+ data[i].image +" alt='test' ></td>";
+        item = item + '<td class="event_name"><b>Nom de l\'événement : </b>' + data[i].event_name  + '</td><td class="description"><b>Déscription de l\'événement : </b>' + data[i].description +
+            "</td><td class='dispo-btn'><button class='btn_add' onclick='studentAdd();'>Sinscrire à l'événement</button></td></tr>";
     }
-    item = item + '</table>';
+    item = item + '</table> ';
     $('#listeEvents').append(item);
 
 }

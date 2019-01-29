@@ -7,8 +7,8 @@
  */
 session_start();
 
-include "form_signup.php";
-include "form_login.php";
+include "../view/includes/form_signup.php";
+include "../view/includes/form_login.php";
 
 if(isset($_SESSION['username']) && isset($_SESSION['email']) && isset($_SESSION['usertype']) && isset($_SESSION['promotion'])){
     $username = $_SESSION['username'];
@@ -25,7 +25,7 @@ class home
 ?>
 
 <!DOCTYPE html>
-<html lang="ENG">
+<html lang="eng">
 <head>
     <title>Accueil</title>
     <meta charset="utf-8">
@@ -33,41 +33,38 @@ class home
 
     <link rel="stylesheet" href="../public/css/style.css">
 
-    <!--Our font family-->
-    <!--<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">-->
-
-    <?php include "header.php"; ?>
+    <?php require_once 'includes/header.php'; ?>
 
 </head>
 <body>
 
-    <div class="container-img">
-        <img src="../assets/image/airsoft.JPG" alt="Nature" style="width:100%;">
-        <div class="text-block">
-            <h4>Activité Airsoft</h4>
-            <a href="events.php" class="link">Plus d'information sur cette activitée</a>
+    <div class="container-slide">
+        <!-- Wrapper for slides -->
+        <div class="column">
+            <img src="../assets/image/slide1.JPG" alt="Airsoft" class="img" style="width:100%;">
+            <button class="btn-slide">Button</button>
+        </div>
+        <div class="column">
+                <img src="../assets/image/slide2.jpg" alt="Calendrier" class="img" style="width:100%;">
+        </div>
+        <div class="column">
+                <img src="../assets/image/slide3.png" alt="Evénements" class="img" style="width:100%;">
         </div>
     </div>
 
-
-    <div>
-        <p>HOME</p>
-        <p>HOME</p>
-        <p>HOME</p>
-        <p>HOME</p>
-        <p>HOME</p>
-        <p>HOME</p>
-        <p>HOME</p>
-        <p>HOME</p>
-        <p>HOME</p>
-        <p>HOME</p>
-        <p>HOME</p>
-        <p>HOME</p>
-        <p>HOME</p>
-        <p>HOME</p>
-        <p>HOME</p>
+    <div class="container-shop">
+        <h2>Habillez vous aux couleurs de votre BDE</h2>
+            <div class="center">
+                <img src="../assets/image/t-shirt1.png" alt="sweat" style="width:100%;" class="image-shop">
+            </div>
+            <div class="center">
+                <img src="../assets/image/sweat.jpg" alt="tee" style="width:100%;" class="image-shop">
+            </div>
+            <button onclick="self.location.href='shop.php'" class="btn-shop">Allez à la boutique</button>
     </div>
 
-<?php include "footer.php"; ?>
+
 </body>
+<?php require_once 'includes/footer.php'; ?>
+
 </html>

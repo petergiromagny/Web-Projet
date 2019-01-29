@@ -12,7 +12,6 @@ class footer
 }
 ?>
 
-    <title></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -25,41 +24,41 @@ class footer
 
     <footer>
         <!-- Footer Links -->
-        <div class="container">
+        <div class="container-footer">
             <!-- Grid row-->
             <div class="row text-center d-flex justify-content-center pt-3 mb-3">
                 <!-- Grid column -->
                 <div class="col-md-2 mb-3">
                     <h6 class="text-uppercase font-weight-bold">
-                        <a href="home.php" class="link">Accueil</a>
+                        <a href="../view/home.php" class="link">Accueil</a>
                     </h6>
                 </div>
                 <!-- Grid column -->
                 <!-- Grid column -->
                 <div class="col-md-2 mb-3">
                     <h6 class="text-uppercase font-weight-bold">
-                        <a href="events.php" class="link">Evénements</a>
+                        <a href="../view/events.php" class="link">Evénements</a>
                     </h6>
                 </div>
                 <!-- Grid column -->
                 <!-- Grid column -->
                 <div class="col-md-2 mb-3">
                     <h6 class="text-uppercase font-weight-bold">
-                        <a href="idea.php" class="link">Idées</a>
+                        <a href="../view/idea.php" class="link">Idées</a>
                     </h6>
                 </div>
                 <!-- Grid column -->
                 <!-- Grid column -->
                 <div class="col-md-2 mb-3">
                     <h6 class="text-uppercase font-weight-bold">
-                        <a href="shop.php" class="link">Boutique</a>
+                        <a href="../view/shop.php" class="link">Boutique</a>
                     </h6>
                 </div>
                 <!-- Grid column -->
                 <!-- Grid column -->
                 <div class="col-md-2 mb-3">
                     <h6 class="text-uppercase font-weight-bold">
-                        <a href="contactus.php" class="link">Contactez nous</a>
+                        <a href="../view/contactus.php" class="link">Contactez nous</a>
                     </h6>
                 </div>
                 <!-- Grid column -->
@@ -74,7 +73,5 @@ class footer
                 <!--Copyright-->
                 <p >© 2018 Copyright</p>
             </div>
-
-        <script src="Ajax.js" type="text/javascript"></script>
         <!-- Grid row -->
     </footer>

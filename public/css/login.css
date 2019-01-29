@@ -16,20 +16,6 @@ input[type=text], input[type=password] {
     box-sizing: border-box;
 }
 
-/* Set a style for all buttons */
-.btn-sign-up {
-    border-radius: 2px;
-    border: none;
-    cursor: pointer;
-    padding: 5px 13px 5px 13px;
-    background-color: #f4ab25;
-    color: #000;
-}
-
-.btn-sign-up:hover {
-    opacity: 0.8;
-}
-
 /* Center the image and position the close button */
 .imgcontainer {
     text-align: center;
@@ -66,7 +52,6 @@ span.psw {
     height: 100%; /* Full height */
     overflow-y: scroll;
     overflow-x: hidden;
-    /*overflow: auto;*/ /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
     padding-top: 60px;
@@ -74,7 +59,7 @@ span.psw {
 
 .box-content-login{
     background-color: #fefefe;
-    margin: 2% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
     border: 1px solid #888;
     width: 25%; /* Could be more or less, depending on screen size */
 }

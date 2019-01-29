@@ -26,5 +26,19 @@ class EventModel{
         $stmt->bindParam(':image',$img);
         $stmt->execute();
     }
+
+    public function addEvent($event_name,$description,$image,$start_date,$end_date,$lieu,$informations){
+
+        $stmt = $this->pdo->prepare("INSERT INTO evenement SET event_name = :event_name, description = :description, image = :image, start_date = :start_date, end_date = :end_date, lieu = :lieu, informations = :informations");
+        $stmt->execute([
+            "event_name" => $event_name,
+            "description" => $description,
+            "image" => $image,
+            "start_date" => $start_date,
+            "end_date" => $end_date,
+            "lieu" => $lieu,
+            "informations" => $informations
+        ]);
+    }
 }
 

@@ -6,6 +6,12 @@
     outline: none !important;
 }
 
+.container-footer{
+    margin: 0 29.60px 0 29.60px;
+    padding: 16px 15px;
+}
+
+
 footer{
     position: relative;
     left: 0;

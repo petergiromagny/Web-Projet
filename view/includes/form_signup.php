@@ -16,7 +16,6 @@ class form_signup
 <!DOCTYPE html>
 <html lang="ENG">
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -26,7 +25,7 @@ class form_signup
 
     <!--SIGN UP-->
     <div id="signup" class="modal-sign-up">
-        <form class="box-content-sign-up animate" id="signup-fo" name="form-signup">
+        <form class="box-content-sign-up animate" id="signup-fo" name="form-signup" action="../controller/UserController.php?status=inscription">
             <div class="imgcontainer">
                 <span onclick="document.getElementById('signup').style.display='none'" class="close" title="Close Modal">&times;</span>
             </div>
@@ -60,21 +59,21 @@ class form_signup
                 <label for="psw2"><b>Confirmez votre mot de passe</b></label>
                 <input type="password" placeholder="Comfirmez votre mot de passe" name="psw2" id="psw2" required>
 
+                <label>
+                    <input type="checkbox" name="remember" required> Accepter les <a href="includes/legal_notices.php" target="_blank">mentions légal</a> et
+                    <a href="includes/general_terms_condition.php" target="_blank">les conditions de règlement</a>
+                </label>
+
                 <button type="button" onclick="document.getElementById('signup').style.display='none'" class="cancelbtn-signup">Quitter</button>
                 <button class="signupbtn-signup" name="button-signup" type="submit">S'inscrire</button>
             </div>
-
-            <div class="container" style="background-color:#f1f1f1">
-
-
-            </div>
-            <div>Salut</div>
+            <div class="container" style="background-color:#dcdada"></div>
         </form>
         <div class="overlay"></div>
     </div>
 
 
-    <!--SIGN UP JS-->
+    <!--SIGN UP-->
     <script>
         // Get the modal
         var modal = document.getElementById('signup');

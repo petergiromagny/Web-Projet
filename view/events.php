@@ -7,8 +7,9 @@
  */
 session_start();
 
-include "form_signup.php";
-include "form_login.php";
+require_once "../view/includes/form_signup.php";
+require_once "../view/includes/form_login.php";
+require_once "add_article.php";
 
 if(isset($_SESSION['username']) && isset($_SESSION['email']) && isset($_SESSION['usertype']) && isset($_SESSION['promotion'])){
     $username = $_SESSION['username'];
@@ -30,37 +31,35 @@ class events
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <?php include "header.php"; ?>
+    <link rel="stylesheet" href="../public/css/events.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:900i" rel="stylesheet">
+
+    <?php require_once "includes/header.php"; ?>
 
 </head>
 <body>
 
 
 
-    <div id="eventlists" style="padding-top:50px;">
-        liste de evenements
+    <div id="eventlists" style="padding-top:10px;">
+        <h1>Evenements</h1>
         <div id="listeEvents">
 
         </div>
         <?php if(isset($_SESSION['usertype'])){
-            if ($usertype == 1 || $usertype == 3) {
-                echo "<button>Ajouter un evenement</button>";
+            if ($_SESSION['usertype'] == 1 || $_SESSION['usertype'] == 3) {
+                echo "<button class='btn-add-event' onclick=\"document.getElementById('add_article').style.display='block'\">Ajouter un evenement</button>";
             }
         } ?>
     </div>
 
 
-
-<hr>
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<?php include "footer.php"; ?>
+    <script type="text/javascript" src="Ajax.js">
+        $(document).ready(function () {
+            getEvents();
+        });
+    </script>
 </body>
+<?php require_once "includes/footer.php"; ?>
 </html>

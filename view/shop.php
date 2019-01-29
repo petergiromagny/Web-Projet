@@ -8,8 +8,8 @@
 
 session_start();
 
-include "form_signup.php";
-include "form_login.php";
+include "includes/form_signup.php";
+include "includes/form_login.php";
 
 
 if(isset($_SESSION['username']) && isset($_SESSION['email']) && isset($_SESSION['usertype']) && isset($_SESSION['promotion'])){
@@ -34,52 +34,48 @@ class shop
 
     <link rel="stylesheet" href="../public/css/shop.css">
 
-    <!--Our font family-->
-    <!--<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">-->
-
-
-
 </head>
 <body>
 
-    <?php include "header.php"; ?>
+    <?php require_once "includes/header.php"; ?>
 
     <div class="main-container">
         <div class="left">
             <img src="../assets/image/sweat.jpg" alt="Avatar" class="image" style="width:100%">
-            <button href="#" class="btn"> Acheter </button>
+            <button href="#" class="btn-buy"> Ajouter au panier </button>
         </div>
         <div class="left">
             <img src="../assets/image/t-shirt1.png" alt="T-shirt" class="image" style="width:100%">
-            <button type="button" href="#" class="btn"> Acheter </button>
+            <button type="button" href="#" class="btn-buy"> Ajouter au panier </button>
         </div>
         <div class="left">
             <img src="../assets/image/sweat.jpg" alt="Avatar" class="image" style="width:100%">
-            <button type="button" href="#" class="btn"> Acheter </button>
+            <button type="button" href="#" class="btn-buy"> Ajouter au panier </button>
         </div>
         <div class="left">
             <img src="../assets/image/sweat.jpg" alt="Avatar" class="image" style="width:100%">
-            <button type="button" href="#" class="btn"> Acheter </button>
+            <button type="button" href="#" class="btn-buy"> Ajouter au panier </button>
         </div>
         <div class="left">
             <img src="../assets/image/t-shirt1.png" alt="T-shirt" class="image" style="width:100%">
-            <button type="button" href="#" class="btn"> Acheter </button>
+            <button type="button" href="#" class="btn-buy"> Ajouter au panier </button>
         </div>
         <div class="left">
             <img src="../assets/image/sweat.jpg" alt="Avatar" class="image" style="width:100%">
-            <button type="button" href="#" class="btn"> Acheter </button>
+            <button type="button" href="#" class="btn-buy"> Ajouter au panier </button>
         </div>
         <div class="left">
             <img src="../assets/image/t-shirt1.png" alt="T-shirt" class="image" style="width:100%">
-            <button type="button" href="#" class="btn"> Acheter </button>
+            <button type="button" href="#" class="btn-buy"> Ajouter au panier </button>
         </div>
         <div class="left">
             <img src="../assets/image/sweat.jpg" alt="Avatar" class="image" style="width:100%">
-            <button type="button" href="#" class="btn"> Acheter </button>
+            <button type="button" href="#" class="btn-buy"> Ajouter au panier </button>
         </div>
     </div>
 
 
-<?php include "footer.php"; ?>
+
 </body>
+<?php require_once "includes/footer.php"; ?>
 </html>

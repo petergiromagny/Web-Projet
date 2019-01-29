@@ -7,7 +7,7 @@ body {
 }
 
 /* Full-width input fields */
-input[type=text], input[type=password] {
+input[type=text] {
     width: 100%;
     padding: 2px 20px;
     margin: 0 0 10px 0;
@@ -17,7 +17,7 @@ input[type=text], input[type=password] {
 }
 
 /* Center the image and position the close button */
-.imgcontainer {
+.imgcontainer-add-article {
     text-align: center;
     margin: 24px 0 12px 0;
     position: relative;
@@ -42,7 +42,7 @@ span.psw {
 }
 
 /* The Modal (background) */
-.modal-sign-up {
+.modal-add-article {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -58,7 +58,7 @@ span.psw {
 }
 
 /* Modal Content/Box */
-.box-content-sign-up {
+.box-content-add-article {
     background-color: #fefefe;
     margin: auto auto 10% auto; /* 5% from the top, 15% from the bottom and centered */
     border: 1px solid #888;
@@ -94,8 +94,14 @@ span.psw {
     display: table;
 }
 
+#subject{
+    width: 660.5px !important;
+    height: 160px !important;
+    resize: both;
+}
+
 /* Extra styles for the cancel button */
-.cancelbtn-signup {
+.cancelbtn-article {
     padding: 7px 13px;
     border: none;
     cursor: pointer;
@@ -104,7 +110,7 @@ span.psw {
     background-color: #f44336;
 }
 
-.signupbtn-signup {
+.btn-article {
     padding: 7px 13px;
     width: 50%;
     float: left;
@@ -130,7 +136,7 @@ span.psw {
         display: block;
         float: none;
     }
-    .cancelbtn-signup {
+    .cancelbtn-article {
         width: 100%;
     }
 }

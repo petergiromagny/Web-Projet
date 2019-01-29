@@ -66,6 +66,7 @@ class form_login
             }
         }
     </script>
-
+         <script src="https://code.jquery.com/jquery-3.1.1.min.js">
+        <script src="../controller/Ajax.js"></script>
 </body>
 </html>

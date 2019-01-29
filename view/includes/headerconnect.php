@@ -35,6 +35,8 @@ class headerconnect
     <!-- Font Awesome JS -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
+
+
 </head>
 <body>
 
@@ -49,22 +51,32 @@ class headerconnect
 
         <ul class="list-unstyled components">
             <li class="active">
-                <a href="home.php"><i class="fa fa-home"></i> Home</a>
-                <a href="events.php"><i class="far fa-calendar-alt"></i> Evénements</a>
-                <a href="idea.php"><i class="far fa-lightbulb"></i> Idées</a>
-                <a href="contactus.php"><i class="far fa-question-circle"></i> Contactez-nous</a>
+                <a href="../view/home.php"><i class="fa fa-home"></i> Home</a>
+                <a href="../view/shop.php"><i class="fas fa-shopping-cart"></i> Boutique</a>
+                <a href="../view/events.php"><i class="far fa-calendar-alt"></i> Evénements</a>
+                <a href="../view/idea.php"><i class="far fa-lightbulb"></i> Idées</a>
+                <a href="../view/contactus.php"><i class="far fa-question-circle"></i> Contactez-nous</a>
                 <a href="https://www.facebook.com/bdecesiaix/" target=_blank><i class="fab fa-facebook-f"></i> Facebook</a>
                 <a href="https://discord.gg/WCJtbnY" target=_blank><i class="fab fa-discord"></i> Discord</a>
         </ul>
-    </nav>
+    </header>
 
     <!-- PAGE CONTENT  -->
-    <div id="content">
-        <nav class="navbar">
+    <div>
+        <header class="navbar">
             <div class="container-fluid">
                 <button type="button" id="sidebarCollapse" class="btn-nav"><i class="fas fa-bars"></i></button>
                 <div>
-                    <button type="button" onclick="" class="btn-nav btn-sign-in"  style="width: auto;"><span class="glyphicon glyphicon-log-in"></span>Déconnexion</button>
+
+                    <?php /*if (!isset($_SESSION['username'])){
+                            echo '<button type="button" onclick="document.getElementById(\'signup\').style.display=\'block\'" class="btn-nav btn-sign-up" id="" style="width: auto;"><span class="glyphicon glyphicon-user"></span><i class="fas fa-user-plus"></i> Inscription</button>
+                                  <button type="button" onclick="document.getElementById(\'login\').style.display=\'block\'" class="btn-nav btn-sign-in" id="" style="width: auto;"><span class="glyphicon glyphicon-log-in"></span><i class="fas fa-sign-in-alt"></i> Connexion</button>';
+                            }
+                            else{
+                            echo '<button type="button" id="sidebarCollapse" class="btn-nav">Déconnexion</button>';
+                            }*/?>
+                    <button type="button" class="btn-nav btn-sign-up" id="" style="width: auto;">Déconnexion</button>
+
                 </div>
             </div>
             <div class="title">
@@ -77,6 +89,10 @@ class headerconnect
 
 
 <div class="overlay"></div>
+
+
+
+<br><br><br><br><br><br><br><br><br><br>
 
 <!-- jQuery CDN - Slim version (=without AJAX) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -108,6 +124,9 @@ class headerconnect
         });
     });
 </script>
-<script type="text/javascript" src="Ajax.js"></script>
+
+<?php require_once 'footer.php'; ?>
+
+<script type="text/javascript" src="../Ajax.js"></script>
 </body>
 </html>

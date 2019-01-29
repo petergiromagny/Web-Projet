@@ -44,13 +44,13 @@ class header
 
             <ul class="list-unstyled components">
                 <li class="active">
-                    <a href="home.php"><i class="fa fa-home"></i> Home</a>
-                    <a href="shop.php"><i class="fas fa-shopping-cart"></i> Boutique</a>
-                    <a href="events.php"><i class="far fa-calendar-alt"></i> Evénements</a>
-                    <a href="idea.php"><i class="far fa-lightbulb"></i> Idées</a>
-                    <a href="contactus.php"><i class="far fa-question-circle"></i> Contactez-nous</a>
-                    <a href="https://www.facebook.com/bdecesiaix/" target=_blank><i class="fab fa-facebook-f"></i> Facebook</a>
-                    <a href="https://discord.gg/WCJtbnY" target=_blank><i class="fab fa-discord"></i> Discord</a>
+                    <a class="nav-a" href="../view/home.php"><i class="fa fa-home"></i> Home</a>
+                    <a class="nav-a" href="../view/shop.php"><i class="fas fa-shopping-cart"></i> Boutique</a>
+                    <a class="nav-a" href="../view/events.php"><i class="far fa-calendar-alt"></i> Evénements</a>
+                    <a class="nav-a" href="../view/idea.php"><i class="far fa-lightbulb"></i> Idées</a>
+                    <a class="nav-a" href="../view/contactus.php"><i class="far fa-question-circle"></i> Contactez-nous</a>
+                    <a class="nav-a" href="https://www.facebook.com/bdecesiaix/" target=_blank><i class="fab fa-facebook-f"></i> Facebook</a>
+                    <a class="nav-a" href="https://discord.gg/WCJtbnY" target=_blank><i class="fab fa-discord"></i> Discord</a>
             </ul>
         </header>
 
@@ -62,7 +62,7 @@ class header
                     <div>
                         <?php
                         if (isset($_SESSION['username']) && isset($_SESSION['email'])) {
-                            echo "<h1><a href='signout.php?logout=1'><i class=\"fas fa-sign-out-alt\"></i></a> Bienvenue ".$username."</h1>";
+                            echo "<p><a class='icon-home' href='includes/signout.php?logout=1'><i class=\"fas fa-sign-out-alt\"></i> </a>  Bienvenue ".$username."</p>";
                         }
                         else{
                             echo " <button type=\"button\" onclick=\"document.getElementById('signup').style.display='block'\" class=\"btn-nav btn-sign-up\" id=\"\" style=\"width: auto;\"><span class=\"glyphicon glyphicon-user\"></span><i class=\"fas fa-user-plus\"></i> Inscription</button>";

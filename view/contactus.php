@@ -7,9 +7,8 @@
  */
 session_start();
 
-
-include "form_signup.php";
-include "form_login.php";
+include "../view/includes/form_signup.php";
+include "../view/includes/form_login.php";
 
 if(isset($_SESSION['username']) && isset($_SESSION['email']) && isset($_SESSION['usertype']) && isset($_SESSION['promotion'])){
     $username = $_SESSION['username'];
@@ -31,43 +30,30 @@ class contactus
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <?php include "header.php"; ?>
+    <?php require_once "includes/header.php"; ?>
+
+    <link rel="stylesheet" href="../public/css/contactus.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:900i" rel="stylesheet">
 
 </head>
-<body>
+    <body>
+        <h2 class="titre"> Contactez nous</h2>
 
-<br><br><br>
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<hr>
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<hr>
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
-<br>LE FOOTER
+        <!--CONTACT US-->
+        <form action="">
+            <div class="container-contact">
+                <label for="email"><b>E-Mail</b></label>
+                <input type="text" pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" placeholder="Entrez votre e-mail..." name="email" required>
 
-<?php include "footer.php"; ?>
-</body>
+                <label for="subject"><b>Sujet</b></label>
+                <textarea id="subject" name="subject" placeholder="Ecrivez votre sujet d'activité..."></textarea>
+
+                <button class="signupbtn-signup" name="btn-send" type="submit" style="width: 100%">Ajouter</button>
+            </div>
+        </form>
+
+
+    </body>
+
+<?php require_once "includes/footer.php"; ?>
 </html>
