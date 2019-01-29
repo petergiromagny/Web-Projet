@@ -14,9 +14,25 @@ class UserModel {
         $this->pdo = singleton::getInstance();
     }
 
-    public function Inscription($username, $password, $firstname, $lastname, $promotion, $mail){
+    public function inscription($username, $password, $firstname, $lastname, $promotion, $mail){
 
-        $requete = $this->pdo->prepare("INSERT INTO users SET username = :username, password = :password, first_name = :firstname, last_name = :lastname, promotion =  :promotion, mail = :mail");
+
+
+        $test = $this->pdo->prepare("SELECT username FROM utilisateur WHERE username = :username");
+        $test->execute(array("username" => $username));
+
+        if($test->rowCount() >= 1) {
+           echo "error";
+            }
+        else{
+            $this->register($username, $password, $firstname, $lastname, $promotion, $mail);
+        }
+    }
+
+    private function register($username, $password, $firstname, $lastname, $promotion, $mail){
+
+
+        $requete = $this->pdo->prepare("INSERT INTO utilisateur SET username = :username, password = sha1(:password), first_name = :firstname, last_name = :lastname, promotion =  :promotion, mail = :mail");
 
         $requete->execute([
             "username" => $username,
@@ -28,26 +44,41 @@ class UserModel {
         ]);
     }
 
- /*   public function Connexion(){
+    public function connexion($mail, $password){
 
+        $retour = new stdClass();
+        $retour->success = false;
 
-        if(empty($username) || empty($motDePasse)) {
-            $message = 'Les champs ne sont pas remplis';
+        if(empty($mail) || empty($password)) {
+            $retour->message = 'Les champs ne sont pas remplis';
         } else {
-            $requete = $this->pdo->prepare("SELECT * FROM users WHERE pseudo =? AND  motDePasse =?");
-            $requete->execute(array($username, $motDePasse));
-            $row = $requete->fetch(PDO::FETCH_BOTH);
+            $requete = $this->pdo->prepare("SELECT * FROM utilisateur WHERE mail = :mail");
+            $requete->execute(array("mail" => $mail));
 
-            if($requete->rowCount() > 0){
-                session_start();
-                $_SESSION['pseudo'] = $username;
-                $_SESSION['password'] = $motDePasse;
-                header('location:connected.php');
-            } else {
-                echo "Error, wrong password/username";
+            $result = $requete->fetch(PDO::FETCH_ASSOC);
+            if($result['password'] = sha1($password)){
+                $username = $result['username'];
+                $usertype = $result['user_type'];
+                $promotion = $result['promotion'];
+                if($requete->rowCount() > 0){
+                    session_start();
+                    $retour->success = true;
+                    $_SESSION['email'] = $mail;
+                    $_SESSION['username'] = $username;
+                    $_SESSION['usertype'] = $usertype;
+                    $_SESSION['promotion'] = $promotion;
+                    $retour->url_redirect = '../view/events.php';
+                } else {
+                    $retour->message = 'Erreur';
+                }
             }
         }
-    }*/
+
+        header('Cache-Control: no-cache, must-revalidate');
+        header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
+        header('Content-type: application/json');
+        echo json_encode($retour);
+    }
 }
 
 

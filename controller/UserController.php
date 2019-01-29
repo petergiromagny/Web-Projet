@@ -34,6 +34,14 @@ function inscription(){
     $promotion = $_POST['promo'];
     $mail = $_POST['mail'];
 
-    $bdd->Inscription($username, $password, $firstname, $lastname, $promotion, $mail);
+    $bdd->inscription($username, $password, $firstname, $lastname, $promotion, $mail);
+}
 
+function connexion(){
+    global $bdd;
+
+    $mail = $_POST['email'];
+    $password = $_POST['psw'];
+
+    $bdd->connexion($mail, $password);
 }
