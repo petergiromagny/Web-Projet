@@ -29,7 +29,7 @@ include "form_login.php";
             <div style="text-align:center;">
                 <input type="email" name="email" placeholder="Votre E-Mail ... "  size="60" required><br/><br/><br/>
                 <textarea style="width:80%;" cols="8" rows="8" name="message" placeholder="Votre message ... " required></textarea><br/><br/><br/><br/>
-                <input type="submit">
+                <input style="background-color:#f4ab25" type="submit" name = "envoyer" value = "Envoyer">
             </div>
         </form>
     <?php include "footer.php"; ?>
