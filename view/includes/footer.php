@@ -12,7 +12,6 @@ class footer
 }
 ?>
 
-    <title></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -25,7 +24,7 @@ class footer
 
     <footer>
         <!-- Footer Links -->
-        <div class="container">
+        <div class="container-footer">
             <!-- Grid row-->
             <div class="row text-center d-flex justify-content-center pt-3 mb-3">
                 <!-- Grid column -->

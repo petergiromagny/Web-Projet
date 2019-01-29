@@ -143,10 +143,10 @@ function afficheList(data,status){
     var tab = {name : 'Airsoft', description : 'activité airsoft', img : '../assets/image/slide1.JPG'};
     $('#listeEvents').empty();
     var item = '<table>';
-    for (var i in data)
+    for (var i in tab)
     {
-        item = item + '<tr><td>' + tab.name  + '</td><td>' + tab.description + "</td></tr><button onclick='studentAdd();'>Sinscrire à l'événement</button>" +
-            "<img src=" +tab.img+" alt='Italian Trulli'>";
+        item = item + '<tr><td>' + tab[i].name  + '</td><td>' + tab[i].description + "</td></tr><button onclick='studentAdd();'>Sinscrire à l'événement</button>" +
+            "<img src=" +tab[i].img+" alt='Italian Trulli'>";
         if(usertype == 3 || usertype == 2){
             item = item + '<button>Supprimer cet image</button>';
         }

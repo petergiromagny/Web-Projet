@@ -16,7 +16,6 @@ class form_signup
 <!DOCTYPE html>
 <html lang="ENG">
 <head>
-    <title>signup</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -60,10 +59,15 @@ class form_signup
                 <label for="psw2"><b>Confirmez votre mot de passe</b></label>
                 <input type="password" placeholder="Comfirmez votre mot de passe" name="psw2" id="psw2" required>
 
+                <label>
+                    <input type="checkbox" name="remember" required> Accepter les <a href="includes/legal_notices.php" target="_blank">mentions légal</a> et
+                    <a href="includes/general_terms_condition.php" target="_blank">les conditions de règlement</a>
+                </label>
+
                 <button type="button" onclick="document.getElementById('signup').style.display='none'" class="cancelbtn-signup">Quitter</button>
                 <button class="signupbtn-signup" name="button-signup" type="submit">S'inscrire</button>
             </div>
-            <div class="container" style="background-color:#f1f1f1"></div>
+            <div class="container" style="background-color:#dcdada"></div>
         </form>
         <div class="overlay"></div>
     </div>

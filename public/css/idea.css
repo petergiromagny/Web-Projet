@@ -1,0 +1,19 @@
+#subject{
+    width: 100% !important;
+    height: 160px !important;
+    resize: both;
+}
+
+.container-idea{
+    margin: 30px 50px 70px 50px;
+}
+
+.btn-idea{
+    padding: 7px 13px;
+    width: 100%;
+    float: left;
+    border: none;
+    cursor: pointer;
+    background-color: #f4ab25;
+    color: #000;
+}

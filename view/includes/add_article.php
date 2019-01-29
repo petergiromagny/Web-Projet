@@ -25,7 +25,7 @@ class add_article
 </head>
 <body>
 
-    <!--SIGN UP-->
+    <!--ADD ARTICLE-->
     <div id="add_article" class="modal-add-article">
         <form class="box-content-add-article animate" id="add-article-fo" name="form-add-article">
             <div class="imgcontainer-add-article">

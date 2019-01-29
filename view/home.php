@@ -48,14 +48,16 @@ class home
     <div class="container-shop">
         <h2>Habillez vous aux couleurs de votre BDE</h2>
             <div class="center">
-                <img src="../assets/image/aucune_image.gif" alt="sweat" style="width:100%;" class="image-shop">
+                <img src="../assets/image/t-shirt1.png" alt="sweat" style="width:100%;" class="image-shop">
             </div>
             <div class="center">
-                <img src="../assets/image/aucune_image.gif" alt="tee" style="width:100%;" class="image-shop">
+                <img src="../assets/image/sweat.jpg" alt="tee" style="width:100%;" class="image-shop">
             </div>
-            <button href="shop.php" class="btn-shop">Allez à la boutique</button>
+            <button onclick="self.location.href='shop.php'" class="btn-shop">Allez à la boutique</button>
     </div>
 
-<?php require_once 'includes/footer.php'; ?>
+
 </body>
+<?php require_once 'includes/footer.php'; ?>
+
 </html>

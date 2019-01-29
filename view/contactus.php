@@ -26,35 +26,27 @@ class contactus
 
     <?php require_once "includes/header.php"; ?>
 
+    <link rel="stylesheet" href="../public/css/contactus.css">
+
 </head>
-<body>
+    <body>
+        <h2 class="titre"> Contactez nous</h2>
 
-<div class="container">
-    <form action="contactus.php">
+        <!--CONTACT US-->
+        <form action="">
+            <div class="container-contact">
+                <label for="email"><b>E-Mail</b></label>
+                <input type="text" pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" placeholder="Entrez votre e-mail..." name="email" required>
 
-        <label for="fname">First Name</label>
-        <input type="text" id="fname" name="firstname" placeholder="Votre prénom ...">
+                <label for="subject"><b>Sujet</b></label>
+                <textarea id="subject" name="subject" placeholder="Ecrivez votre sujet d'activité..."></textarea>
 
-        <label for="lname">Last Name</label>
-        <input type="text" id="lname" name="lastname" placeholder="Votre nom ...">
+                <button class="signupbtn-signup" name="btn-send" type="submit" style="width: 100%">Ajouter</button>
+            </div>
+        </form>
 
-        <label for="class">Classe</label>
-        <select id="class" name="Classe">
-            <option value="A1">A1</option>
-            <option value="A2">A2</option>
-            <option value="A3">A3</option>
-            <option value="A4">A4</option>
-            <option value="A5">A5</option>
-        </select>
 
-        <label for="subject">Subject</label>
-        <textarea id="subject" name="subject" placeholder="Dites nous en plus ..." style="height:200px"></textarea>
-
-        <input type="Envoyer" value="Envoyer">
-
-    </form>
-</div>
+    </body>
 
 <?php require_once "includes/footer.php"; ?>
-</body>
 </html>
