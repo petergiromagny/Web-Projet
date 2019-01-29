@@ -68,6 +68,7 @@ class form_signup
 
 
             </div>
+            <div>Salut</div>
         </form>
         <div class="overlay"></div>
     </div>

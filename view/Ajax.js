@@ -50,8 +50,11 @@
             data: serializedData
         });
 
-        request.done(function (response, textStatus, jqXHR){
+        request.done(function (data){
             // Log a message to the console
+            window.location = "../view/home.php";
+
+
             console.log("Ok!");
         });
 
@@ -147,9 +150,6 @@ function afficheList(data,status){
             "<img src="+ data[i].image  +" alt='Airsoft'>";
     }
     item = item + '</table>';
-    /*if(usertype == 3 || usertype == 2){
-        item = item + '<button>Ajouter un evenement</button>';
-    }*/
     $('#listeEvents').append(item);
 
 }

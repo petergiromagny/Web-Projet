@@ -16,16 +16,22 @@ class UserModel {
 
     public function inscription($username, $password, $firstname, $lastname, $promotion, $mail){
 
-
+        $retour = new stdClass();
 
         $test = $this->pdo->prepare("SELECT username FROM utilisateur WHERE username = :username");
         $test->execute(array("username" => $username));
 
         if($test->rowCount() >= 1) {
-           echo "error";
+           $retour->message = 'Pseudo/Adresse mail déjà utilisée';
             }
         else{
             $this->register($username, $password, $firstname, $lastname, $promotion, $mail);
+            $retour->url_redirect = '../view/home.php';
+
+            header('Cache-Control: no-cache, must-revalidate');
+            header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
+            header('Content-type: application/json');
+            echo json_encode($retour);
         }
     }
 
@@ -42,6 +48,8 @@ class UserModel {
             "promotion" => $promotion,
             "mail" =>$mail
         ]);
+
+
     }
 
     public function connexion($mail, $password){
@@ -60,7 +68,6 @@ class UserModel {
                 $username = $result['username'];
                 $usertype = $result['user_type'];
                 $promotion = $result['promotion'];
-                $retour->usertype = $usertype;
                 if($requete->rowCount() > 0){
                     session_start();
                     $retour->success = true;
