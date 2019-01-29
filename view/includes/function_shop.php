@@ -73,12 +73,12 @@
         if (creationPanier() && !isVerouille()){
 
             $tmp =array();
-            $tmp['libellerProduit'] = array();
+            $tmp['libelleProduit'] = array();
             $tmp['qteProduit'] = array();
             $tmp['prixProduit'] = array();
             $tmp['verrou'] = array();
 
-            for ($i; $i<count($_SESSION['panier']['libelleProduit']); $i++){
+            for ($i = 0; $i<count($_SESSION['panier']['libelleProduit']); $i++){
 
                 if ($_SESSION['panier']['libelleProduit'][$i] !== $libelleProduit){
 
@@ -154,7 +154,7 @@
 
         function compterArticles(){
 
-            if (isset($_SESSION['panier']['libellerProduit'])){
+            if (isset($_SESSION['panier']['libelleProduit'])){
 
                 return count($_SESSION['panier']['libelleProduit']);
 

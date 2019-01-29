@@ -32,35 +32,35 @@ class shop
     <div class="main-container">
         <div class="left">
             <img src="../assets/image/sweat.jpg" alt="Avatar" class="image" style="width:100%">
-            <button href="#" class="btn-buy"> Acheter </button>
+            <button href="#" class="btn-buy"> Ajouter au panier </button>
         </div>
         <div class="left">
             <img src="../assets/image/t-shirt1.png" alt="T-shirt" class="image" style="width:100%">
-            <button type="button" href="#" class="btn-buy"> Acheter </button>
+            <button type="button" href="#" class="btn-buy"> Ajouter au panier </button>
         </div>
         <div class="left">
             <img src="../assets/image/sweat.jpg" alt="Avatar" class="image" style="width:100%">
-            <button type="button" href="#" class="btn-buy"> Acheter </button>
+            <button type="button" href="#" class="btn-buy"> Ajouter au panier </button>
         </div>
         <div class="left">
             <img src="../assets/image/sweat.jpg" alt="Avatar" class="image" style="width:100%">
-            <button type="button" href="#" class="btn-buy"> Acheter </button>
+            <button type="button" href="#" class="btn-buy"> Ajouter au panier </button>
         </div>
         <div class="left">
             <img src="../assets/image/t-shirt1.png" alt="T-shirt" class="image" style="width:100%">
-            <button type="button" href="#" class="btn-buy"> Acheter </button>
+            <button type="button" href="#" class="btn-buy"> Ajouter au panier </button>
         </div>
         <div class="left">
             <img src="../assets/image/sweat.jpg" alt="Avatar" class="image" style="width:100%">
-            <button type="button" href="#" class="btn-buy"> Acheter </button>
+            <button type="button" href="#" class="btn-buy"> Ajouter au panier </button>
         </div>
         <div class="left">
             <img src="../assets/image/t-shirt1.png" alt="T-shirt" class="image" style="width:100%">
-            <button type="button" href="#" class="btn-buy"> Acheter </button>
+            <button type="button" href="#" class="btn-buy"> Ajouter au panier </button>
         </div>
         <div class="left">
             <img src="../assets/image/sweat.jpg" alt="Avatar" class="image" style="width:100%">
-            <button type="button" href="#" class="btn-buy"> Acheter </button>
+            <button type="button" href="#" class="btn-buy"> Ajouter au panier </button>
         </div>
     </div>
 
