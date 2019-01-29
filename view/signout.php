@@ -6,13 +6,10 @@
  * Time: 11:52
  */
 
-session_start();
-
-session_destroy();
-header();
-exit;
-
-class signout
-{
-
+if(isset($_GET['logout'])){
+    session_start();
+    session_unset();
+    session_destroy();
+    header('Location: ../view/home.php');
 }
+exit;

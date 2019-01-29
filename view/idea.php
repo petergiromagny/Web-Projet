@@ -13,8 +13,6 @@ if(isset($_SESSION['username']) && isset($_SESSION['email']) && isset($_SESSION[
     $usertype = $_SESSION['usertype'];
 }
 
-session_start();
-
 include "form_signup.php";
 include "form_login.php";
 

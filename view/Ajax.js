@@ -145,13 +145,7 @@ function afficheList(data,status){
     {
         item = item + '<tr><td>' + data[i].name  + '</td><td>' + data[i].description + "</td></tr><button onclick='studentAdd();'>Sinscrire à l'événement</button>" +
             "<img src="+ data[i].image  +" alt='Airsoft'>";
-        if(usertype == 3 || usertype == 2){
-            var img = data[i].image;
-            item = item + '<button id="deleteImg" onclick="deletePic(img);">Supprimer cet image</button>';
-        }
     }
-
-    console.log(usertype);
     item = item + '</table>';
     /*if(usertype == 3 || usertype == 2){
         item = item + '<button>Ajouter un evenement</button>';

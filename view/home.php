@@ -5,8 +5,17 @@
  * Date: 16/01/2019
  * Time: 12:42
  */
+session_start();
+
 include "form_signup.php";
 include "form_login.php";
+
+if(isset($_SESSION['username']) && isset($_SESSION['email']) && isset($_SESSION['usertype']) && isset($_SESSION['promotion'])){
+    $username = $_SESSION['username'];
+    $email = $_SESSION['email'];
+    $usertype = $_SESSION['usertype'];
+    $promotion = $_SESSION['promotion'];
+}
 
 class home
 {
@@ -58,7 +67,6 @@ class home
         <p>HOME</p>
         <p>HOME</p>
     </div>
-
 
 <?php include "footer.php"; ?>
 </body>

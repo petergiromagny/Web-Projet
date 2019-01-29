@@ -74,5 +74,7 @@ class footer
                 <!--Copyright-->
                 <p >© 2018 Copyright</p>
             </div>
+
+        <script src="Ajax.js" type="text/javascript"></script>
         <!-- Grid row -->
     </footer>

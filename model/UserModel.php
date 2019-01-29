@@ -60,6 +60,7 @@ class UserModel {
                 $username = $result['username'];
                 $usertype = $result['user_type'];
                 $promotion = $result['promotion'];
+                $retour->usertype = $usertype;
                 if($requete->rowCount() > 0){
                     session_start();
                     $retour->success = true;
@@ -67,7 +68,7 @@ class UserModel {
                     $_SESSION['username'] = $username;
                     $_SESSION['usertype'] = $usertype;
                     $_SESSION['promotion'] = $promotion;
-                    $retour->url_redirect = '../view/events.php';
+                    $retour->url_redirect = '../view/home.php';
                 } else {
                     $retour->message = 'Erreur';
                 }

@@ -42,15 +42,14 @@ class events
         <div id="listeEvents">
 
         </div>
-        <?php if(isset($_SESSION['usertype']) && $usertype == 1 || $usertype == 3){
-            echo "<button>Ajouter un evenement</button>";
+        <?php if(isset($_SESSION['usertype'])){
+            if ($usertype == 1 || $usertype == 3) {
+                echo "<button>Ajouter un evenement</button>";
+            }
         } ?>
     </div>
 
-<script>
-    var user = '<?php echo $username ?>';
-    var usertype = '<?php echo $usertype ?>';
-</script>
+
 
 <hr>
 <br>LE FOOTER
